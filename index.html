@@ -269,15 +269,15 @@
                 <!-- Mobile Language Switcher (in mobile menu) -->
                 <div class="flex justify-center">
                     <div class="flex space-x-2 bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
-                        <button @click="language = 'en'; localStorage.setItem('language', 'en')"
-                                class="px-3 py-1 rounded-md text-sm transition-colors duration-200"
-                                :class="language === 'en' ? 'bg-blue-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'">
-                            EN
-                        </button>
                         <button @click="language = 'ro'; localStorage.setItem('language', 'ro')"
                                 class="px-3 py-1 rounded-md text-sm transition-colors duration-200"
                                 :class="language === 'ro' ? 'bg-blue-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'">
                             RO
+                        </button>
+                        <button @click="language = 'en'; localStorage.setItem('language', 'en')"
+                                class="px-3 py-1 rounded-md text-sm transition-colors duration-200"
+                                :class="language === 'en' ? 'bg-blue-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'">
+                            EN
                         </button>
                     </div>
                 </div>
@@ -389,7 +389,7 @@
                 <!-- Infrastructure Services -->
                 <div class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                     <div class="mb-6 text-center">
-                        <i class="fas fa-server text-5xl bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent transform hover:scale-110 transition-transform"></i>
+                        <i class="fas fa-database text-5xl bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent transform hover:scale-110 transition-transform"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-3">
                         <span x-show="language === 'en'">Infrastructure Solutions</span>
