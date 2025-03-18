@@ -215,15 +215,15 @@
                 <!-- Desktop Language Switcher -->
                 <div class="hidden md:flex items-center space-x-4">
                     <div class="flex space-x-2 bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
-                        <button @click="language = 'en'; localStorage.setItem('language', 'en')"
-                                class="px-3 py-1 rounded-md text-sm transition-colors duration-200"
-                                :class="language === 'en' ? 'bg-blue-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'">
-                            EN
-                        </button>
                         <button @click="language = 'ro'; localStorage.setItem('language', 'ro')"
                                 class="px-3 py-1 rounded-md text-sm transition-colors duration-200"
                                 :class="language === 'ro' ? 'bg-blue-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'">
                             RO
+                        </button>
+                        <button @click="language = 'en'; localStorage.setItem('language', 'en')"
+                                class="px-3 py-1 rounded-md text-sm transition-colors duration-200"
+                                :class="language === 'en' ? 'bg-blue-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'">
+                            EN
                         </button>
                     </div>
                 </div>
@@ -367,7 +367,7 @@
                     </h3>
                     <p class="text-gray-700 dark:text-gray-300">
                         <span x-show="language === 'en'">Professional websites built with WordPress, Jekyll, or custom solutions to establish your online presence.</span>
-                        <span x-show="language === 'ro'">Site-uri web profesionale construite cu WordPress, Jekyll sau soluții personalizate pentru a-ți stabili prezența online.</span>
+                        <span x-show="language === 'ro'">Site-uri web profesionale construite cu WordPress, Jekyll sau soluții personalizate pentru a-ți face remarcată prezența online.</span>
                     </p>
                 </div>
 
@@ -382,7 +382,7 @@
                     </h3>
                     <p class="text-gray-700 dark:text-gray-300">
                         <span x-show="language === 'en'">Expert guidance on technology strategy, digital transformation, and IT optimization.</span>
-                        <span x-show="language === 'ro'">Îndrumare expertă privind strategia tehnologică, transformarea digitală și optimizarea IT.</span>
+                        <span x-show="language === 'ro'">Îndrumare de specialitate privind strategia tehnologică, transformarea digitală și optimizarea IT.</span>
                     </p>
                 </div>
 
@@ -407,7 +407,7 @@
                         <i class="fas fa-puzzle-piece text-5xl bg-gradient-to-r from-red-400 to-rose-500 bg-clip-text text-transparent transform hover:scale-110 transition-transform"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-3">
-                        <span x-show="language === 'en'">Enterprise Software Integration</span>
+                        <span x-show="language === 'en'">Business Software Integration</span>
                         <span x-show="language === 'ro'">Integrare Software pentru Companii</span>
                     </h3>
                     <p class="text-gray-700 dark:text-gray-300">
@@ -426,8 +426,8 @@
                         <span x-show="language === 'ro'">Găzduire & Mentenanță</span>
                     </h3>
                     <p class="text-gray-700 dark:text-gray-300">
-                        <span x-show="language === 'en'">Professional web hosting with 99.9% uptime, regular maintenance, security updates, and 24/7 monitoring to keep your digital presence running smoothly.</span>
-                        <span x-show="language === 'ro'">Găzduire web profesională cu disponibilitate de 99.9%, mentenanță regulată, actualizări de securitate și monitorizare 24/7 pentru a menține prezența dvs. digitală funcțională.</span>
+                        <span x-show="language === 'en'">Professional web hosting, regular maintenance, and monitoring to keep your digital presence running smoothly.</span>
+                        <span x-show="language === 'ro'">Găzduire web profesională, mentenanță regulată, și monitorizare pentru a menține prezența dvs. digitală funcțională.</span>
                     </p>
                 </div>
             </div>
@@ -459,8 +459,8 @@
                             <span x-show="language === 'ro'">Suită E-commerce Personalizată</span>
                         </h3>
                         <p class="text-gray-600 dark:text-gray-400">
-                            <span x-show="language === 'en'">Advanced online retail platform with integrated payment processing and inventory management.</span>
-                            <span x-show="language === 'ro'">Platformă avansată de retail online cu procesare integrată a plăților și gestionare a inventarului.</span>
+                            <span x-show="language === 'en'">Advanced online platform with integrated payment processing for niche services providers.</span>
+                            <span x-show="language === 'ro'">Platformă avansată cu procesare integrată a plăților pentru furnzori de servicii de nișate.</span>
                         </p>
                     </div>
                 </div>
@@ -477,7 +477,7 @@
                         </h3>
                         <p class="text-gray-600 dark:text-gray-400">
                             <span x-show="language === 'en'">Custom-designed WordPress solutions with optimized performance and SEO.</span>
-                            <span x-show="language === 'ro'">Soluții WordPress personalizate cu performanță și SEO optimizate.</span>
+                            <span x-show="language === 'ro'">Soluții WordPress personalizate cu performanță optimizata și SEO.</span>
                         </p>
                     </div>
                 </div>
