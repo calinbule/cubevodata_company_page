@@ -825,7 +825,7 @@
 </main>
 
 <!-- Footer -->
-<footer role="contentinfo" class="bg-gray-900 text-white py-12">
+<footer role="contentinfo" class="bg-gray-900 text-white py-12 relative"> <!-- Add relative positioning -->
     <div class="container mx-auto px-4">
         <nav
             aria-label="Footer navigation"
@@ -956,18 +956,15 @@
                     <span x-show="language === 'ro'">Copyright © <span x-text="new Date().getFullYear()"></span> Cubevo Data Concept. Toate drepturile rezervate.</span>
                 </p>
             </div>
-
-            <!-- This div is intentionally left empty to maintain the space-between layout -->
-            <div></div>
         </div>
+
     </div>
 
-    <!-- Go to top button -->
+    <!-- Go to top button - updated positioning -->
     <button
         @click="window.scrollTo({top: 0, behavior: 'smooth'})"
-        class="absolute bottom-8 right-8 bg-blue-700 hover:bg-blue-800 text-white p-3 rounded-full shadow-lg transition-colors duration-200"
+        class="fixed bottom-8 right-8 bg-blue-700 hover:bg-blue-800 text-white p-3 rounded-full shadow-lg transition-colors duration-200"
         aria-label="Scroll to top of page"
-        role="button"
     >
         <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
