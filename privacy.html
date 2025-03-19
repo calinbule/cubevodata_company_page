@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQH2ENS4PG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-EQH2ENS4PG');
+    </script>
+    <meta name="keywords" content="privacy policy, GDPR, data protection, personal data, Cubevo">
+    <meta name="author" content="Cubevo Data Concept">
+    <meta property="og:title" content="Privacy Policy | Cubevo Data Concept">
+    <meta property="og:description" content="Privacy Policy for Cubevo Data Concept website in accordance with GDPR">
+    <meta property="og:image" content="path-to-your-logo-or-featured-image.jpg">
+    <meta property="og:url" content="https://cubevodata.com/privacy">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" as="script">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="content-language" content="ro">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Cubevo Data Concept</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        light: {
+                            background: '#ffffff',
+                            text: '#1f2937'
+                        },
+                        dark: {
+                            background: '#121212',
+                            text: '#f3f4f6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Roboto Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* Custom styles for the mirrored 'e' in logo */
+        .mirrored-e {
+            display: inline-block;
+            transform: scale(-1, 1);
+            position: relative;
+            margin: 0 0.05em;
+            text-shadow: 0 0 1px rgba(59, 130, 246, 0.5);
+        }
+        .logo {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 100;
+            font-size: 2.5rem;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Base styles */
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Light mode defaults */
+        :root {
+            color-scheme: light;
+        }
+
+        /* Dark mode */
+        .dark {
+            color-scheme: dark;
+        }
+
+        /* Base transitions */
+        * {
+            transition-property: background-color, border-color, color;
+            transition-duration: 200ms;
+        }
+    </style>
+</head>
+<body
+    x-data="{
+        darkMode: localStorage.getItem('darkMode') === 'true',
+        language: localStorage.getItem('language') || 'ro',
+        menuOpen: false
+    }"
+    x-init="
+        $watch('darkMode', val => {
+            localStorage.setItem('darkMode', val);
+            if (val) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+        if (darkMode) document.documentElement.classList.add('dark');
+    "
+    :class="darkMode ? 'dark bg-gray-900 text-white' : 'bg-white text-gray-900'"
+>
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white dark:bg-gray-900 shadow-md z-50 transition-colors duration-200">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                cub<span class="mirrored-e">e</span>vo
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#services" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <span x-show="language === 'en'">Services</span>
+                    <span x-show="language === 'ro'">Servicii</span>
+                </a>
+                <a href="index.html#portfolio" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <span x-show="language === 'en'">Portfolio</span>
+                    <span x-show="language === 'ro'">Portofoliu</span>
+                </a>
+                <a href="index.html#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <span x-show="language === 'en'">Contact</span>
+                    <span x-show="language === 'ro'">Contact</span>
+                </a>
+
+                <!-- Desktop Language Switcher -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <div class="flex space-x-2 bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
+                        <button @click="language = 'ro'; localStorage.setItem('language', 'ro')"
+                                class="px-3 py-1 rounded-md text-sm transition-colors duration-200"
+                                :class="language === 'ro' ? 'bg-blue-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'">
+                            RO
+                        </button>
+                        <button @click="language = 'en'; localStorage.setItem('language', 'en')"
+                                class="px-3 py-1 rounded-md text-sm transition-colors duration-200"
+                                :class="language === 'en' ? 'bg-blue-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'">
+                            EN
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dark Mode Toggle -->
+                <button @click="darkMode = !darkMode; localStorage.setItem('darkMode', darkMode)"
+                    class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                    <i class="fas" :class="darkMode ? 'fa-sun' : 'fa-moon'"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button @click="menuOpen = !menuOpen" class="md:hidden p-2">
+                <i class="fas" :class="menuOpen ? 'fa-times' : 'fa-bars'"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div x-show="menuOpen"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 transform -translate-y-4"
+            x-transition:enter-end="opacity-100 transform translate-y-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 transform translate-y-0"
+            x-transition:leave-end="opacity-0 transform -translate-y-4"
+            class="md:hidden bg-white dark:bg-gray-900 shadow-md">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="index.html#services" @click="menuOpen = false" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <span x-show="language === 'en'">Services</span>
+                    <span x-show="language === 'ro'">Servicii</span>
+                </a>
+                <a href="index.html#portfolio" @click="menuOpen = false" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <span x-show="language === 'en'">Portfolio</span>
+                    <span x-show="language === 'ro'">Portofoliu</span>
+                </a>
+                <a href="index.html#contact" @click="menuOpen = false" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <span x-show="language === 'en'">Contact</span>
+                    <span x-show="language === 'ro'">Contact</span>
+                </a>
+
+                <!-- Mobile Language Switcher (in mobile menu) -->
+                <div class="flex justify-center">
+                    <div class="flex space-x-2 bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
+                        <button @click="language = 'ro'; localStorage.setItem('language', 'ro')"
+                                class="px-3 py-1 rounded-md text-sm transition-colors duration-200"
+                                :class="language === 'ro' ? 'bg-blue-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'">
+                            RO
+                        </button>
+                        <button @click="language = 'en'; localStorage.setItem('language', 'en')"
+                                class="px-3 py-1 rounded-md text-sm transition-colors duration-200"
+                                :class="language === 'en' ? 'bg-blue-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'">
+                            EN
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dark Mode Toggle -->
+                <button @click="darkMode = !darkMode"
+                        class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                    <i class="fas" :class="darkMode ? 'fa-sun' : 'fa-moon'"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Privacy Policy Content -->
+    <section class="pt-32 pb-16 bg-white dark:bg-gray-900 transition-colors duration-200">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+                <span x-show="language === 'en'">Privacy Policy</span>
+                <span x-show="language === 'ro'">Politica de Confidențialitate</span>
+            </h1>
+
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8 mb-8">
+                <div x-show="language === 'en'">
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">1. Introduction</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        This Privacy Policy explains how Cubevo Data Concept ("we", "us", or "our") uses cookies and similar technologies on our website at <a href="https://cubevodata.com" class="text-blue-600 dark:text-blue-400 hover:underline">cubevodata.com</a>. We are committed to ensuring the privacy and security of your information in compliance with the General Data Protection Regulation (GDPR) and other applicable data protection laws.
+                    </p>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        By using our website, you consent to the data practices described in this Privacy Policy. Please read this policy carefully to understand how we handle your information.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">2. Data Controller</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Cubevo Data Concept (Registration No: 40378484) is the data controller responsible for the processing of data collected through Google Analytics on our website. If you have any questions about this Privacy Policy or our data practices, please contact us at <a href="mailto:contact@cubevodata.com" class="text-blue-600 dark:text-blue-400 hover:underline">contact@cubevodata.com</a>.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">3. Information We Collect</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">
+                        We only collect anonymous usage data through Google Analytics, which includes:
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                        <li><strong>Technical Data:</strong> IP address (anonymized), browser type and version, time zone setting, browser plug-in types and versions, operating system, and platform on the devices you use to access our website.</li>
+                        <li><strong>Usage Data:</strong> Information about how you use our website, including page views, navigation paths, and time spent on pages.</li>
+                        <li><strong>Cookie Data:</strong> Information collected through cookies and similar technologies as described in our <a href="cookies.html" class="text-blue-600 dark:text-blue-400 hover:underline">Cookie Policy</a>.</li>
+                    </ul>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        <strong>Important:</strong> We do not collect or store any personal information such as names, email addresses, or contact details. We do not maintain any user accounts or databases containing personal information.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">4. How We Collect Your Data</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">
+                        We collect data solely through:
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                        <li><strong>Google Analytics:</strong> We use Google Analytics to collect and analyze anonymous information about how visitors use our website. This helps us understand user behavior and improve our website.</li>
+                        <li><strong>Cookies:</strong> Our website uses cookies to enhance your browsing experience. For more information, please see our <a href="cookies.html" class="text-blue-600 dark:text-blue-400 hover:underline">Cookie Policy</a>.</li>
+                    </ul>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">5. How We Use Your Data</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">
+                        We use the anonymous data collected through Google Analytics for the following purposes:
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                        <li>To understand how users interact with our website</li>
+                        <li>To improve our website's design and content</li>
+                        <li>To analyze the effectiveness of our pages and features</li>
+                        <li>To optimize our website for better user experience</li>
+                    </ul>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">6. Legal Basis for Processing</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        We process the anonymous data collected through Google Analytics on the basis of our legitimate interests in improving our website and providing better services to our users.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">7. Data Sharing</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        The only third party with whom we share data is Google, through Google Analytics. Google processes this data on our behalf according to their privacy policy and terms of service. Google may process this data in the United States or other countries.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">8. Data Retention</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        The data collected through Google Analytics is retained according to Google's data retention policies. We have configured our Google Analytics to anonymize IP addresses and to automatically delete user and event data after 26 months.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">9. Your Rights</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">
+                        Under GDPR, you have certain rights regarding your data, including:
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                        <li>The right to be informed about how your data is used</li>
+                        <li>The right to object to processing based on legitimate interests</li>
+                        <li>The right to restrict processing</li>
+                    </ul>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        You can opt out of Google Analytics tracking by installing the <a href="https://tools.google.com/dlpage/gaoptout" class="text-blue-600 dark:text-blue-400 hover:underline">Google Analytics Opt-out Browser Add-on</a>.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">10. Changes to the Privacy Policy</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        We reserve the right to update this privacy policy at any time. Any changes will be posted on this page. You are advised to check this page periodically to ensure that you are happy with any changes.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">11. Contact Us</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        If you have any questions about this Privacy Policy, please contact us at <a href="mailto:contact@cubevodata.com" class="text-blue-600 dark:text-blue-400 hover:underline">contact@cubevodata.com</a>.
+                    </p>
+
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-8">
+                        Last updated: March 19, 2025
+                    </p>
+                </div>
+
+                <div x-show="language === 'ro'">
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">1. Introducere</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Această Politică de Confidențialitate explică modul în care Cubevo Data Concept („noi", „nouă" sau „nostru") utilizează cookie-uri și tehnologii similare pe site-ul nostru web la <a href="https://cubevodata.com" class="text-blue-600 dark:text-blue-400 hover:underline">cubevodata.com</a>. Ne angajăm să asigurăm confidențialitatea și securitatea informațiilor dvs. în conformitate cu Regulamentul General privind Protecția Datelor (GDPR) și alte legi aplicabile privind protecția datelor.
+                    </p>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Prin utilizarea site-ului nostru web, sunteți de acord cu practicile de date descrise în această Politică de Confidențialitate. Vă rugăm să citiți cu atenție această politică pentru a înțelege cum gestionăm informațiile dvs.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">2. Operatorul de Date</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Cubevo Data Concept (CUI: 40378484) este operatorul de date responsabil pentru procesarea datelor colectate prin Google Analytics pe site-ul nostru web. Dacă aveți întrebări despre această Politică de Confidențialitate sau despre practicile noastre de date, vă rugăm să ne contactați la <a href="mailto:contact@cubevodata.com" class="text-blue-600 dark:text-blue-400 hover:underline">contact@cubevodata.com</a>.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">3. Informațiile pe Care le Colectăm</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">
+                        Colectăm doar date de utilizare anonime prin Google Analytics, care includ:
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                        <li><strong>Date Tehnice:</strong> Adresă IP (anonimizată), tipul și versiunea browserului, setarea fusului orar, tipurile și versiunile plugin-urilor browserului, sistemul de operare și platforma pe dispozitivele pe care le utilizați pentru a accesa site-ul nostru web.</li>
+                        <li><strong>Date de Utilizare:</strong> Informații despre modul în care utilizați site-ul nostru web, inclusiv vizualizări de pagini, căi de navigare și timpul petrecut pe pagini.</li>
+                        <li><strong>Date de Cookie-uri:</strong> Informații colectate prin cookie-uri și tehnologii similare, așa cum este descris în <a href="cookies.html" class="text-blue-600 dark:text-blue-400 hover:underline">Politica noastră de Cookie-uri</a>.</li>
+                    </ul>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        <strong>Important:</strong> Nu colectăm și nu stocăm nicio informație personală, cum ar fi nume, adrese de email sau detalii de contact. Nu menținem conturi de utilizator sau baze de date care conțin informații personale.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">4. Cum Colectăm Datele Dvs.</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">
+                        Colectăm date exclusiv prin:
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                        <li><strong>Google Analytics:</strong> Folosim Google Analytics pentru a colecta și analiza informații anonime despre modul în care vizitatorii utilizează site-ul nostru web. Acest lucru ne ajută să înțelegem comportamentul utilizatorilor și să îmbunătățim site-ul nostru web.</li>
+                        <li><strong>Cookie-uri:</strong> Site-ul nostru web utilizează cookie-uri pentru a îmbunătăți experiența dvs. de navigare. Pentru mai multe informații, vă rugăm să consultați <a href="cookies.html" class="text-blue-600 dark:text-blue-400 hover:underline">Politica noastră de Cookie-uri</a>.</li>
+                    </ul>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">5. Cum Utilizăm Datele Dvs.</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">
+                        Utilizăm datele anonime colectate prin Google Analytics în următoarele scopuri:
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                        <li>Pentru a înțelege cum interacționează utilizatorii cu site-ul nostru web</li>
+                        <li>Pentru a îmbunătăți designul și conținutul site-ului nostru web</li>
+                        <li>Pentru a analiza eficacitatea paginilor și funcțiilor noastre</li>
+                        <li>Pentru a optimiza site-ul nostru web pentru o experiență mai bună a utilizatorilor</li>
+                    </ul>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">6. Baza Legală pentru Procesare</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Procesăm datele anonime colectate prin Google Analytics pe baza intereselor noastre legitime de a îmbunătăți site-ul nostru web și de a oferi servicii mai bune utilizatorilor noștri.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">7. Partajarea Datelor</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Singura terță parte cu care partajăm date este Google, prin Google Analytics. Google procesează aceste date în numele nostru conform politicii lor de confidențialitate și termenilor de serviciu. Google poate procesa aceste date în Statele Unite sau în alte țări.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">8. Retenția Datelor</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Datele colectate prin Google Analytics sunt păstrate conform politicilor de retenție a datelor Google. Am configurat Google Analytics pentru a anonimiza adresele IP și pentru a șterge automat datele utilizatorilor și evenimentele după 26 de luni.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">9. Drepturile Dvs.</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">
+                        În conformitate cu GDPR, aveți anumite drepturi cu privire la datele dvs., inclusiv:
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                        <li>Dreptul de a fi informat despre modul în care sunt utilizate datele dvs.</li>
+                        <li>Dreptul de a obiecta la procesarea bazată pe interese legitime</li>
+                        <li>Dreptul de a restricționa procesarea</li>
+                    </ul>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Puteți renunța la urmărirea Google Analytics instalând <a href="https://tools.google.com/dlpage/gaoptout" class="text-blue-600 dark:text-blue-400 hover:underline">Extensia de Browser pentru Dezactivarea Google Analytics</a>.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">10. Modificări ale Politicii de Confidențialitate</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Ne rezervăm dreptul de a actualiza această politică de confidențialitate în orice moment. Orice modificări vor fi postate pe această pagină. Vă recomandăm să verificați periodic această pagină pentru a vă asigura că sunteți mulțumit de orice modificări.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">11. Contactați-ne</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Dacă aveți întrebări despre această Politică de Confidențialitate, vă rugăm să ne contactați la <a href="mailto:contact@cubevodata.com" class="text-blue-600 dark:text-blue-400 hover:underline">contact@cubevodata.com</a>.
+                    </p>
+
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-8">
+                        Ultima actualizare: 19 martie 2025
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 relative">
+        <div class="container mx-auto px-4">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Logo and Info -->
+                <div class="md:col-span-1">
+
+                    <a href="#" class="logo">
+                        cub<span class="mirrored-e">e</span>vo
+                    </a>
+                    <p class="text-gray-400 mb-4">
+                        <span x-show="language === 'en'">Transforming ideas into digital reality since 2019.</span>
+                        <span x-show="language === 'ro'">Transformăm idei în realitate digitală din 2019.</span>
+                    </p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Company Details -->
+                <div class="md:col-span-1">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-200">
+                        <span x-show="language === 'en'">Company Details</span>
+                        <span x-show="language === 'ro'">Detalii Companie</span>
+                    </h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Cubevo Data Concept</li>
+                        <li>
+                            <span x-show="language === 'en'">Registration No: 40378484</span>
+                            <span x-show="language === 'ro'">CUI: 40378484</span>
+                        </li>
+                        <li>
+                            <span x-show="language === 'en'">Chamber of Commerce No: J2019000010029</span>
+                            <span x-show="language === 'ro'">Nr. Reg. Com.: J2019000010029</span>
+                        </li>
+                        <li>
+                            <span x-show="language === 'en'">Address: Calea Aurel Vlaicu 57, Bl. U5, Sc. A, Ap. 12, 310350, Arad, Romania</span>
+                            <span x-show="language === 'ro'">Adresa: Calea Aurel Vlaicu 57, Bl. U5, Sc. A, Ap. 12, 310350, Arad, Jud. Arad</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="md:col-span-1">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-200">
+                        <span x-show="language === 'en'">Quick Links</span>
+                        <span x-show="language === 'ro'">Link-uri Rapide</span>
+                    </h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#services" class="text-gray-400 hover:text-white transition-colors">
+                                <span x-show="language === 'en'">Services</span>
+                                <span x-show="language === 'ro'">Servicii</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">
+                                <span x-show="language === 'en'">Portfolio</span>
+                                <span x-show="language === 'ro'">Portofoliu</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-gray-400 hover:text-white transition-colors">
+                                <span x-show="language === 'en'">Contact</span>
+                                <span x-show="language === 'ro'">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div class="md:col-span-1">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-200">
+                        <span x-show="language === 'en'">Legal</span>
+                        <span x-show="language === 'ro'">Legal</span>
+                    </h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="privacy.html" class="text-gray-400 hover:text-white transition-colors">
+                                <span x-show="language === 'en'">Privacy Policy</span>
+                                <span x-show="language === 'ro'">Politica de Confidențialitate</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="cookies.html" class="text-gray-400 hover:text-white transition-colors">
+                                <span x-show="language === 'en'">Cookie Policy</span>
+                                <span x-show="language === 'ro'">Politica de Cookie-uri</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="terms.html" class="text-gray-400 hover:text-white transition-colors">
+                                <span x-show="language === 'en'">Terms of Service</span>
+                                <span x-show="language === 'ro'">Termeni și Condiții</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-8 border-gray-800">
+
+            <!-- Copyright -->
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <p class="text-gray-500 text-sm">
+                        <span x-show="language === 'en'">Copyright © <span x-text="new Date().getFullYear()"></span> Cubevo Data Concept. All rights reserved.</span>
+                        <span x-show="language === 'ro'">Copyright © <span x-text="new Date().getFullYear()"></span> Cubevo Data Concept. Toate drepturile rezervate.</span>
+                    </p>
+                </div>
+
+                <!-- This div is intentionally left empty to maintain the space-between layout -->
+                <div></div>
+            </div>
+        </div>
+
+        <!-- Go to top button -->
+        <button @click="window.scrollTo({top: 0, behavior: 'smooth'})"
+                class="absolute bottom-8 right-8 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-colors duration-200 focus:outline-none">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <!-- Cookie banner -->
+    <div x-data="{ showCookieConsent: !localStorage.getItem('cookieConsent') }"
+    x-show="showCookieConsent"
+    class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 z-50">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <p class="mb-4 md:mb-0">
+                <span x-show="language === 'en'">We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</span>
+                <span x-show="language === 'ro'">Folosim cookie-uri pentru a îmbunătăți experiența dvs. Continuând să vizitați acest site, sunteți de acord cu utilizarea cookie-urilor.</span>
+            </p>
+            <div class="flex space-x-4">
+                <button @click="localStorage.setItem('cookieConsent', 'true'); showCookieConsent = false"
+                        class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors">
+                <span x-show="language === 'en'">Accept</span>
+                <span x-show="language === 'ro'">Accept</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Scripts -->
+    <script>
+        // Additional functionality or analytics
+        document.addEventListener('DOMContentLoaded', function() {
+        // Form submission handling
+        const contactForm = document.querySelector('#contact form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Form handling logic here
+            alert('Thank you for your message. We will get back to you soon!');
+            this.reset();
+            });
+        }
+
+        // SEO optimization - track user engagement
+        const trackEngagement = () => {
+            // Custom engagement tracking code would go here
+        };
+
+        // Call tracking function
+        trackEngagement();
+        });
+    </script>
+    <script>
+        // Check for dark mode preference on page load
+        if (localStorage.getItem('darkMode') === 'true') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      </script>
+
+</body>
+</html>
+
