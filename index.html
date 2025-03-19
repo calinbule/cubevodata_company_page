@@ -7,8 +7,7 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
-        gtag('config', 'G-EQH2ENS4PG');
+        gtag('config', 'G-EQH2ENS4PG', { 'anonymize_ip': true });
     </script>
     <meta name="keywords" content="software development, custom software, web development, IT consulting, Romania, Arad">
     <meta name="author" content="Cubevo Data Concept">
@@ -22,6 +21,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
     <link rel="preload" href="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" as="script">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <meta charset="UTF-8">
     <meta http-equiv="content-language" content="ro">
@@ -36,25 +38,12 @@
             theme: {
                 extend: {
                     colors: {
-                        light: {
-                            background: '#ffffff',
-                            text: '#1f2937'
-                        },
-                        dark: {
-                            background: '#121212',
-                            text: '#f3f4f6'
-                        },
                         blue: {
                             400: '#60a5fa',
-                            500: '#3b82f6',
-                            600: '#2563eb',
                             700: '#1d4ed8',
-                            800: '#1e40af'
                         },
                         gray: {
                             100: '#f3f4f6',
-                            300: '#d1d5db',
-                            400: '#6b7280',
                             900: '#111827'
                         }
                     }
@@ -65,6 +54,14 @@
 
     <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('state', {
+                darkMode: localStorage.getItem('darkMode') === 'true',
+                language: localStorage.getItem('language') || 'ro'
+            });
+        });
+    </script>
 
     <!-- Roboto Font -->
     <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"> -->
@@ -133,6 +130,7 @@
             position: relative;
             width: 200px; /* Fixed width */
             height: 200px; /* Fixed height */
+            will-change: transform;
             transform-style: preserve-3d;
             animation: rotateCube 30s infinite linear;
         }
@@ -217,6 +215,15 @@
             outline: 2px solid #2563eb;
             outline-offset: 2px;
             box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2563eb;
+        }
+    </style>
+    <style>
+        .cube {
+            will-change: transform;
+            transform-style: preserve-3d;
+        }
+        @keyframes rotateCube {
+            to { transform: rotateX(360deg) rotateY(360deg); }
         }
     </style>
 </head>
