@@ -1,10 +1,13 @@
+version: '3.8'
+
 services:
   web:
     build: .
     env_file: .env
     ports:
-      - "8000:8000"
+      - "${PORT}:${PORT}"
     volumes:
       - .:/app
     environment:
-      - ENVIRONMENT=dev
+      - ENVIRONMENT=${ENVIRONMENT}
+      - PORT=${PORT}
