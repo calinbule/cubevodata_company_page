@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Create static directory in project root if it doesn't exist
+mkdir -p /app/static
+
 # Clear Django cache after build/start
 python manage.py shell -c "from django.core.cache import cache; cache.clear()"
 
@@ -10,4 +13,3 @@ else
     python manage.py migrate
     python manage.py collectstatic --noinput
     gunicorn config.wsgi:application --bind 0.0.0.0:${PORT} --workers 3
-fi
