@@ -1,0 +1,147 @@
+{% extends "core/base.html" %}
+
+{% block main_content %}
+    <!-- Terms and Conditions Content -->
+    <section class="pt-32 pb-16 bg-white dark:bg-gray-900 transition-colors duration-200">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+                <span x-show="language === 'en'">Terms and Conditions</span>
+                <span x-show="language === 'ro'">Termeni și Condiții</span>
+            </h1>
+
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8 mb-8">
+                <div x-show="language === 'en'">
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">1. Introduction</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Welcome to Cubevo Data Concept. These Terms and Conditions govern your use of our website located at <a href="https://cubevodata.com" class="text-blue-600 dark:text-blue-400 hover:underline">cubevodata.com</a> and form the entire agreement between you and us.
+                    </p>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        By using our website, you accept these terms and conditions in full. If you disagree with these terms and conditions or any part of them, you must not use our website.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">2. Intellectual Property Rights</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Unless otherwise stated, we or our licensors own the intellectual property rights in the website and material on the website. Subject to the license below, all these intellectual property rights are reserved.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">3. License to Use Website</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        You may view, download for caching purposes only, and print pages from the website for your own personal use, subject to the restrictions set out below and elsewhere in these terms and conditions.
+                    </p>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        You must not:
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                        <li>Republish material from this website (including republication on another website)</li>
+                        <li>Sell, rent or sub-license material from the website</li>
+                        <li>Reproduce, duplicate, copy or otherwise exploit material on our website for a commercial purpose</li>
+                        <li>Redistribute material from this website except for content specifically and expressly made available for redistribution</li>
+                    </ul>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">4. Acceptable Use</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        You must not use our website in any way that causes, or may cause, damage to the website or impairment of the availability or accessibility of the website; or in any way which is unlawful, illegal, fraudulent or harmful, or in connection with any unlawful, illegal, fraudulent or harmful purpose or activity.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">5. Limitations of Liability</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        The information on this website is provided free-of-charge, and you acknowledge that it would be unreasonable to hold us liable in respect of this website and the information on this website.
+                    </p>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our website and the use of this website.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">6. Privacy</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        For details about how we collect and use your personal information, please see our <a href="privacy.html" class="text-blue-600 dark:text-blue-400 hover:underline">Privacy Policy</a>.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">7. Variation</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        We may revise these terms and conditions from time-to-time. Revised terms and conditions will apply to the use of our website from the date of the publication of the revised terms and conditions on our website.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">8. Governing Law</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        These terms and conditions are governed by and construed in accordance with the laws of Romania and you irrevocably submit to the exclusive jurisdiction of the courts in that location.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">9. Contact Us</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        If you have any questions about these Terms and Conditions, please contact us at <a href="mailto:contact@cubevodata.com" class="text-blue-600 dark:text-blue-400 hover:underline">contact@cubevodata.com</a>.
+                    </p>
+
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-8">
+                        Last updated: March 19, 2025
+                    </p>
+                </div>
+
+                <div x-show="language === 'ro'">
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">1. Introducere</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Bine ați venit la Cubevo Data Concept. Acești Termeni și Condiții guvernează utilizarea site-ului nostru web situat la <a href="https://cubevodata.com" class="text-blue-600 dark:text-blue-400 hover:underline">cubevodata.com</a> și formează întregul acord între dumneavoastră și noi.
+                    </p>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Prin utilizarea site-ului nostru web, acceptați acești termeni și condiții în totalitate. Dacă nu sunteți de acord cu acești termeni și condiții sau cu orice parte a acestora, nu trebuie să utilizați site-ul nostru web.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">2. Drepturi de Proprietate Intelectuală</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Dacă nu se specifică altfel, noi sau licențiatorii noștri deținem drepturile de proprietate intelectuală asupra site-ului web și a materialelor de pe site-ul web. Sub rezerva licenței de mai jos, toate aceste drepturi de proprietate intelectuală sunt rezervate.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">3. Licență de Utilizare a Site-ului Web</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Puteți vizualiza, descărca doar în scopuri de stocare în cache și imprima pagini de pe site-ul web pentru uz personal, sub rezerva restricțiilor stabilite mai jos și în altă parte în acești termeni și condiții.
+                    </p>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Nu trebuie să:
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                        <li>Republicați material de pe acest site web (inclusiv republicarea pe un alt site web)</li>
+                        <li>Vindeți, închiriați sau sub-licențiați material de pe site-ul web</li>
+                        <li>Reproduceți, duplicați, copiați sau exploatați în alt mod material de pe site-ul nostru web în scopuri comerciale</li>
+                        <li>Redistribuiți material de pe acest site web, cu excepția conținutului disponibil în mod specific și expres pentru redistribuire</li>
+                    </ul>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">4. Utilizare Acceptabilă</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Nu trebuie să utilizați site-ul nostru web în niciun mod care cauzează sau poate cauza daune site-ului web sau afectarea disponibilității sau accesibilității site-ului web; sau în orice mod care este ilegal, ilicit, fraudulos sau dăunător, sau în legătură cu orice scop sau activitate ilegală, ilicită, frauduloasă sau dăunătoare.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">5. Limitări ale Răspunderii</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Informațiile de pe acest site web sunt furnizate gratuit, și recunoașteți că ar fi nerezonabil să ne considerați răspunzători în ceea ce privește acest site web și informațiile de pe acest site web.
+                    </p>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        În măsura maximă permisă de legea aplicabilă, excludem toate reprezentările, garanțiile și condițiile referitoare la site-ul nostru web și la utilizarea acestui site web.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">6. Confidențialitate</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Pentru detalii despre modul în care colectăm și utilizăm informațiile dvs. personale, vă rugăm să consultați <a href="privacy.html" class="text-blue-600 dark:text-blue-400 hover:underline">Politica noastră de Confidențialitate</a>.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">7. Variație</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Putem revizui acești termeni și condiții din când în când. Termenii și condițiile revizuite se vor aplica utilizării site-ului nostru web de la data publicării termenilor și condițiilor revizuite pe site-ul nostru web.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">8. Legea Aplicabilă</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Acești termeni și condiții sunt guvernați de și interpretați în conformitate cu legile din România și vă supuneți irevocabil jurisdicției exclusive a instanțelor din această locație.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">9. Contactați-ne</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Dacă aveți întrebări despre acești Termeni și Condiții, vă rugăm să ne contactați la <a href="mailto:contact@cubevodata.com" class="text-blue-600 dark:text-blue-400 hover:underline">contact@cubevodata.com</a>.
+                    </p>
+
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-8">
+                        Ultima actualizare: 19 martie 2025
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

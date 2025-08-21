@@ -1,0 +1,194 @@
+{% extends "core/base.html" %}
+
+{% block main_content %}
+    <section class="pt-32 pb-16 bg-white dark:bg-gray-900 transition-colors duration-200">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+                <span x-show="language === 'en'">Privacy Policy</span>
+                <span x-show="language === 'ro'">Politica de Confidențialitate</span>
+            </h1>
+
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md p-6 md:p-8 mb-8">
+                <div x-show="language === 'en'">
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">1. Introduction</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        This Privacy Policy explains how Cubevo Data Concept ("we", "us", or "our") uses cookies and similar technologies on our website at <a href="https://cubevodata.com" class="text-blue-600 dark:text-blue-400 hover:underline">cubevodata.com</a>. We are committed to ensuring the privacy and security of your information in compliance with the General Data Protection Regulation (GDPR) and other applicable data protection laws.
+                    </p>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        By using our website, you consent to the data practices described in this Privacy Policy. Please read this policy carefully to understand how we handle your information.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">2. Data Controller</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Cubevo Data Concept (Registration No: 40378484) is the data controller responsible for the processing of data collected through Google Analytics on our website. If you have any questions about this Privacy Policy or our data practices, please contact us at <a href="mailto:contact@cubevodata.com" class="text-blue-600 dark:text-blue-400 hover:underline">contact@cubevodata.com</a>.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">3. Information We Collect</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">
+                        We only collect anonymous usage data through Google Analytics, which includes:
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                        <li><strong>Technical Data:</strong> IP address (anonymized), browser type and version, time zone setting, browser plug-in types and versions, operating system, and platform on the devices you use to access our website.</li>
+                        <li><strong>Usage Data:</strong> Information about how you use our website, including page views, navigation paths, and time spent on pages.</li>
+                        <li><strong>Cookie Data:</strong> Information collected through cookies and similar technologies as described in our <a href="cookies.html" class="text-blue-600 dark:text-blue-400 hover:underline">Cookie Policy</a>.</li>
+                    </ul>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        <strong>Important:</strong> We do not collect or store any personal information such as names, email addresses, or contact details. We do not maintain any user accounts or databases containing personal information.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">4. How We Collect Your Data</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">
+                        We collect data solely through:
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                        <li><strong>Google Analytics:</strong> We use Google Analytics to collect and analyze anonymous information about how visitors use our website. This helps us understand user behavior and improve our website.</li>
+                        <li><strong>Cookies:</strong> Our website uses cookies to enhance your browsing experience. For more information, please see our <a href="cookies.html" class="text-blue-600 dark:text-blue-400 hover:underline">Cookie Policy</a>.</li>
+                    </ul>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">5. How We Use Your Data</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">
+                        We use the anonymous data collected through Google Analytics for the following purposes:
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                        <li>To understand how users interact with our website</li>
+                        <li>To improve our website's design and content</li>
+                        <li>To analyze the effectiveness of our pages and features</li>
+                        <li>To optimize our website for better user experience</li>
+                    </ul>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">6. Legal Basis for Processing</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        We process the anonymous data collected through Google Analytics on the basis of our legitimate interests in improving our website and providing better services to our users.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">7. Data Sharing</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        The only third party with whom we share data is Google, through Google Analytics. Google processes this data on our behalf according to their privacy policy and terms of service. Google may process this data in the United States or other countries.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">8. Data Retention</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        The data collected through Google Analytics is retained according to Google's data retention policies. We have configured our Google Analytics to anonymize IP addresses and to automatically delete user and event data after 26 months.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">9. Your Rights</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">
+                        Under GDPR, you have certain rights regarding your data, including:
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                        <li>The right to be informed about how your data is used</li>
+                        <li>The right to object to processing based on legitimate interests</li>
+                        <li>The right to restrict processing</li>
+                    </ul>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        You can opt out of Google Analytics tracking by installing the <a href="https://tools.google.com/dlpage/gaoptout" class="text-blue-600 dark:text-blue-400 hover:underline">Google Analytics Opt-out Browser Add-on</a>.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">10. Changes to the Privacy Policy</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        We reserve the right to update this privacy policy at any time. Any changes will be posted on this page. You are advised to check this page periodically to ensure that you are happy with any changes.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">11. Contact Us</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        If you have any questions about this Privacy Policy, please contact us at <a href="mailto:contact@cubevodata.com" class="text-blue-600 dark:text-blue-400 hover:underline">contact@cubevodata.com</a>.
+                    </p>
+
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-8">
+                        Last updated: March 19, 2025
+                    </p>
+                </div>
+
+                <div x-show="language === 'ro'">
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">1. Introducere</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Această Politică de Confidențialitate explică modul în care Cubevo Data Concept („noi", „nouă" sau „nostru") utilizează cookie-uri și tehnologii similare pe site-ul nostru web la <a href="https://cubevodata.com" class="text-blue-600 dark:text-blue-400 hover:underline">cubevodata.com</a>. Ne angajăm să asigurăm confidențialitatea și securitatea informațiilor dvs. în conformitate cu Regulamentul General privind Protecția Datelor (GDPR) și alte legi aplicabile privind protecția datelor.
+                    </p>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Prin utilizarea site-ului nostru web, sunteți de acord cu practicile de date descrise în această Politică de Confidențialitate. Vă rugăm să citiți cu atenție această politică pentru a înțelege cum gestionăm informațiile dvs.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">2. Operatorul de Date</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Cubevo Data Concept (CUI: 40378484) este operatorul de date responsabil pentru procesarea datelor colectate prin Google Analytics pe site-ul nostru web. Dacă aveți întrebări despre această Politică de Confidențialitate sau despre practicile noastre de date, vă rugăm să ne contactați la <a href="mailto:contact@cubevodata.com" class="text-blue-600 dark:text-blue-400 hover:underline">contact@cubevodata.com</a>.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">3. Informațiile pe Care le Colectăm</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">
+                        Colectăm doar date de utilizare anonime prin Google Analytics, care includ:
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                        <li><strong>Date Tehnice:</strong> Adresă IP (anonimizată), tipul și versiunea browserului, setarea fusului orar, tipurile și versiunile plugin-urilor browserului, sistemul de operare și platforma pe dispozitivele pe care le utilizați pentru a accesa site-ul nostru web.</li>
+                        <li><strong>Date de Utilizare:</strong> Informații despre modul în care utilizați site-ul nostru web, inclusiv vizualizări de pagini, căi de navigare și timpul petrecut pe pagini.</li>
+                        <li><strong>Date de Cookie-uri:</strong> Informații colectate prin cookie-uri și tehnologii similare, așa cum este descris în <a href="cookies.html" class="text-blue-600 dark:text-blue-400 hover:underline">Politica noastră de Cookie-uri</a>.</li>
+                    </ul>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        <strong>Important:</strong> Nu colectăm și nu stocăm nicio informație personală, cum ar fi nume, adrese de email sau detalii de contact. Nu menținem conturi de utilizator sau baze de date care conțin informații personale.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">4. Cum Colectăm Datele Dvs.</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">
+                        Colectăm date exclusiv prin:
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                        <li><strong>Google Analytics:</strong> Folosim Google Analytics pentru a colecta și analiza informații anonime despre modul în care vizitatorii utilizează site-ul nostru web. Acest lucru ne ajută să înțelegem comportamentul utilizatorilor și să îmbunătățim site-ul nostru web.</li>
+                        <li><strong>Cookie-uri:</strong> Site-ul nostru web utilizează cookie-uri pentru a îmbunătăți experiența dvs. de navigare. Pentru mai multe informații, vă rugăm să consultați <a href="cookies.html" class="text-blue-600 dark:text-blue-400 hover:underline">Politica noastră de Cookie-uri</a>.</li>
+                    </ul>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">5. Cum Utilizăm Datele Dvs.</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">
+                        Utilizăm datele anonime colectate prin Google Analytics în următoarele scopuri:
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                        <li>Pentru a înțelege cum interacționează utilizatorii cu site-ul nostru web</li>
+                        <li>Pentru a îmbunătăți designul și conținutul site-ului nostru web</li>
+                        <li>Pentru a analiza eficacitatea paginilor și funcțiilor noastre</li>
+                        <li>Pentru a optimiza site-ul nostru web pentru o experiență mai bună a utilizatorilor</li>
+                    </ul>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">6. Baza Legală pentru Procesare</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Procesăm datele anonime colectate prin Google Analytics pe baza intereselor noastre legitime de a îmbunătăți site-ul nostru web și de a oferi servicii mai bune utilizatorilor noștri.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">7. Partajarea Datelor</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Singura terță parte cu care partajăm date este Google, prin Google Analytics. Google procesează aceste date în numele nostru conform politicii lor de confidențialitate și termenilor de serviciu. Google poate procesa aceste date în Statele Unite sau în alte țări.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">8. Retenția Datelor</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Datele colectate prin Google Analytics sunt păstrate conform politicilor de retenție a datelor Google. Am configurat Google Analytics pentru a anonimiza adresele IP și pentru a șterge automat datele utilizatorilor și evenimentele după 26 de luni.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">9. Drepturile Dvs.</h2>
+                    <p class="mb-4 text-gray-700 dark:text-gray-300">
+                        În conformitate cu GDPR, aveți anumite drepturi cu privire la datele dvs., inclusiv:
+                    </p>
+                    <ul class="list-disc pl-6 mb-6 text-gray-700 dark:text-gray-300">
+                        <li>Dreptul de a fi informat despre modul în care sunt utilizate datele dvs.</li>
+                        <li>Dreptul de a obiecta la procesarea bazată pe interese legitime</li>
+                        <li>Dreptul de a restricționa procesarea</li>
+                    </ul>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Puteți renunța la urmărirea Google Analytics instalând <a href="https://tools.google.com/dlpage/gaoptout" class="text-blue-600 dark:text-blue-400 hover:underline">Extensia de Browser pentru Dezactivarea Google Analytics</a>.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">10. Modificări ale Politicii de Confidențialitate</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Ne rezervăm dreptul de a actualiza această politică de confidențialitate în orice moment. Orice modificări vor fi postate pe această pagină. Vă recomandăm să verificați periodic această pagină pentru a vă asigura că sunteți mulțumit de orice modificări.
+                    </p>
+
+                    <h2 class="text-xl font-semibold mb-4 text-blue-600 dark:text-blue-400">11. Contactați-ne</h2>
+                    <p class="mb-6 text-gray-700 dark:text-gray-300">
+                        Dacă aveți întrebări despre această Politică de Confidențialitate, vă rugăm să ne contactați la <a href="mailto:contact@cubevodata.com" class="text-blue-600 dark:text-blue-400 hover:underline">contact@cubevodata.com</a>.
+                    </p>
+
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-8">
+                        Ultima actualizare: 19 martie 2025
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

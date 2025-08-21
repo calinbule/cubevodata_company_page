@@ -1,0 +1,204 @@
+{% extends "core/base.html" %}
+
+{% block main_content %}
+<section
+    aria-labelledby="microservers-title"
+    class="pt-32 pb-16 bg-white dark:bg-gray-900 transition-colors duration-200"
+    role="region"
+    aria-roledescription="Microservers"
+>
+    <div class="container mx-auto px-4">
+        <!-- SEO Title & Description -->
+        <h1 id="microservers-title" class="text-4xl md:text-5xl font-bold mb-6 text-center text-blue-700 dark:text-blue-400">
+            <span x-show="language === 'en'">Microservers & Private Cloud Solutions</span>
+            <span x-show="language === 'ro'">Microservere & Soluții Cloud Private</span>
+        </h1>
+        <p class="text-xl mb-10 text-center text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+            <span x-show="language === 'en'">
+                Discover our modern microserver and private cloud solutions for secure, scalable, and energy-efficient business infrastructure.
+            </span>
+            <span x-show="language === 'ro'">
+                Descoperă soluțiile noastre moderne de microservere și cloud privat pentru o infrastructură de afaceri sigură, scalabilă și eficientă energetic.
+            </span>
+        </p>
+
+        <!-- Product List Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+            <!-- Local File Server / NAS -->
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow flex flex-col h-full">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-folder-open text-blue-700 dark:text-blue-400 text-3xl mr-3"></i>
+                    <h2 class="text-xl font-semibold">
+                        <span x-show="language === 'en'">Local File Server / NAS</span>
+                        <span x-show="language === 'ro'">Server de Fișiere Local / NAS</span>
+                    </h2>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 flex-grow">
+                    <span x-show="language === 'en'">
+                        Store, organize, and share company documents securely within your office. Your team can access files quickly, without relying on external cloud services.<br>
+                        <strong>Advantages:</strong> Keeps sensitive data in-house, fast access to files, easy to manage and backup.
+                    </span>
+                    <span x-show="language === 'ro'">
+                        Stocați, organizați și partajați documentele companiei în siguranță, direct în biroul dvs. Echipa are acces rapid la fișiere, fără a depinde de servicii cloud externe.<br>
+                        <strong>Avantaje:</strong> Datele sensibile rămân interne, acces rapid la fișiere, administrare și backup ușor.
+                    </span>
+                </p>
+            </div>
+            <!-- Private Cloud Sync -->
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow flex flex-col h-full">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-cloud-upload-alt text-indigo-600 dark:text-blue-300 text-3xl mr-3"></i>
+                    <h2 class="text-xl font-semibold">
+                        <span x-show="language === 'en'">Private Cloud Sync</span>
+                        <span x-show="language === 'ro'">Cloud Privat pentru Sincronizare</span>
+                    </h2>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 flex-grow">
+                    <span x-show="language === 'en'">
+                        Synchronize calendars, contacts, and documents across all your devices, just like popular cloud services—but hosted privately in your office.<br>
+                        <strong>Advantages:</strong> Full control over your data, no monthly cloud fees, seamless collaboration.
+                    </span>
+                    <span x-show="language === 'ro'">
+                        Sincronizați calendare, contacte și documente pe toate dispozitivele, la fel ca în serviciile cloud populare, dar găzduite privat în sediul dvs.<br>
+                        <strong>Avantaje:</strong> Control total asupra datelor, fără taxe lunare, colaborare eficientă.
+                    </span>
+                </p>
+            </div>
+            <!-- Network Monitoring & Security -->
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow flex flex-col h-full">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-shield-alt text-green-600 dark:text-green-400 text-3xl mr-3"></i>
+                    <h2 class="text-xl font-semibold">
+                        <span x-show="language === 'en'">Network Monitoring & Security</span>
+                        <span x-show="language === 'ro'">Monitorizare și Securitate Rețea</span>
+                    </h2>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 flex-grow">
+                    <span x-show="language === 'en'">
+                        Monitor your company’s network for unusual activity, block unwanted ads, and keep your internet safe for everyone.<br>
+                        <strong>Advantages:</strong> Proactive security alerts, improved productivity, peace of mind.
+                    </span>
+                    <span x-show="language === 'ro'">
+                        Monitorizați rețeaua companiei pentru activități neobișnuite, blocați reclamele nedorite și asigurați siguranța internetului pentru toți.<br>
+                        <strong>Avantaje:</strong> Alerte de securitate proactive, productivitate crescută, liniște pentru afacerea dvs.
+                    </span>
+                </p>
+            </div>
+            <!-- Digital Signage Controller -->
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow flex flex-col h-full">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-tv text-pink-600 dark:text-pink-400 text-3xl mr-3"></i>
+                    <h2 class="text-xl font-semibold">
+                        <span x-show="language === 'en'">Digital Signage Controller</span>
+                        <span x-show="language === 'ro'">Controller pentru Semnalistică Digitală</span>
+                    </h2>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 flex-grow">
+                    <span x-show="language === 'en'">
+                        Display announcements, promotions, or schedules on screens in your office, shop, or waiting area—updated instantly from your desk.<br>
+                        <strong>Advantages:</strong> Professional image, easy to update, cost-effective.
+                    </span>
+                    <span x-show="language === 'ro'">
+                        Afișați anunțuri, promoții sau programe pe ecrane în birou, magazin sau recepție—actualizate instant de la birou.<br>
+                        <strong>Avantaje:</strong> Imagine profesională, actualizare ușoară, soluție economică.
+                    </span>
+                </p>
+            </div>
+            <!-- VPN Server -->
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow flex flex-col h-full">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-lock text-yellow-600 dark:text-yellow-400 text-3xl mr-3"></i>
+                    <h2 class="text-xl font-semibold">
+                        <span x-show="language === 'en'">VPN Server</span>
+                        <span x-show="language === 'ro'">Server VPN</span>
+                    </h2>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 flex-grow">
+                    <span x-show="language === 'en'">
+                        Allow your team to securely access company resources from anywhere, whether working from home or traveling.<br>
+                        <strong>Advantages:</strong> Secure remote access, protects company data, enables flexible work.
+                    </span>
+                    <span x-show="language === 'ro'">
+                        Permiteți echipei să acceseze în siguranță resursele companiei de oriunde, fie de acasă, fie din deplasare.<br>
+                        <strong>Avantaje:</strong> Acces remote securizat, protecția datelor, flexibilitate în muncă.
+                    </span>
+                </p>
+            </div>
+            <!-- Local Web Server -->
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow flex flex-col h-full">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-globe text-cyan-600 dark:text-cyan-400 text-3xl mr-3"></i>
+                    <h2 class="text-xl font-semibold">
+                        <span x-show="language === 'en'">Local Web Server</span>
+                        <span x-show="language === 'ro'">Server Web Local</span>
+                    </h2>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 flex-grow">
+                    <span x-show="language === 'en'">
+                        Host internal websites, dashboards, or documentation that only your team can access, improving communication and efficiency.<br>
+                        <strong>Advantages:</strong> Keeps information private, fast access, customizable.
+                    </span>
+                    <span x-show="language === 'ro'">
+                        Găzduiți site-uri interne, dashboard-uri sau documentație accesibilă doar echipei, pentru o comunicare și eficiență mai bună.<br>
+                        <strong>Avantaje:</strong> Informații private, acces rapid, personalizare.
+                    </span>
+                </p>
+            </div>
+            <!-- Print Server -->
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow flex flex-col h-full">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-print text-purple-600 dark:text-purple-400 text-3xl mr-3"></i>
+                    <h2 class="text-xl font-semibold">
+                        <span x-show="language === 'en'">Print Server</span>
+                        <span x-show="language === 'ro'">Server de Printare</span>
+                    </h2>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 flex-grow">
+                    <span x-show="language === 'en'">
+                        Centralize and manage all office printers, making it easy for everyone to print from any device.<br>
+                        <strong>Advantages:</strong> Simplifies printing, reduces IT headaches, works with existing printers.
+                    </span>
+                    <span x-show="language === 'ro'">
+                        Centralizați și administrați toate imprimantele din birou, astfel încât oricine să poată imprima de pe orice dispozitiv.<br>
+                        <strong>Avantaje:</strong> Simplifică procesul de printare, reduce problemele IT, compatibil cu imprimantele existente.
+                    </span>
+                </p>
+            </div>
+            <!-- Backup Server -->
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow flex flex-col h-full">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-database text-orange-600 dark:text-orange-400 text-3xl mr-3"></i>
+                    <h2 class="text-xl font-semibold">
+                        <span x-show="language === 'en'">Backup Server</span>
+                        <span x-show="language === 'ro'">Server de Backup</span>
+                    </h2>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 flex-grow">
+                    <span x-show="language === 'en'">
+                        Automatically back up important files and data, so you’re protected against accidental loss or hardware failure.<br>
+                        <strong>Advantages:</strong> Reliable data protection, quick recovery, no need for expensive backup services.
+                    </span>
+                    <span x-show="language === 'ro'">
+                        Realizați automat backup pentru fișierele și datele importante, pentru a fi protejat împotriva pierderilor accidentale sau a defecțiunilor hardware.<br>
+                        <strong>Avantaje:</strong> Protecție fiabilă a datelor, recuperare rapidă, fără servicii de backup costisitoare.
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center mt-10">
+            <a href="{% url 'index' %}#contact"
+               class="inline-block bg-blue-700 hover:bg-blue-800 text-white py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg font-medium"
+               aria-label="Contact us about microservers">
+                <span x-show="language === 'en'">
+                    Contact us today and let us help make your business more efficient!
+                </span>
+                <span x-show="language === 'ro'">
+                    Contactați-ne și vă ajutăm să vă faceți afacerea mai eficientă!
+                </span>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
