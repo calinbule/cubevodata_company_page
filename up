@@ -1,0 +1,17 @@
+# reset cache
+sudo rm -r django_cache
+
+# reset git repo
+git reset --hard
+
+# pull from master
+git pull origin master
+
+# stop actual container
+docker compose down
+
+# rebuild container
+docker compose build --no-cache
+
+# start container
+docker compose up -d
