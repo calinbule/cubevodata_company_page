@@ -2,6 +2,7 @@
 
 # Create static directory in project root if it doesn't exist
 mkdir -p /app/static
+mkdir -p /app/log
 
 # Clear Django cache after build/start
 python manage.py shell -c "from django.core.cache import cache; cache.clear()"
