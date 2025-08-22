@@ -1,302 +1,274 @@
 <!DOCTYPE html>
 <html lang="ro">
-<head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQH2ENS4PG"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-EQH2ENS4PG', { 'anonymize_ip': true });
-    </script>
-    <meta name="keywords" content="software development, custom software, web development, IT consulting, Romania, Arad">
-    <meta name="author" content="Cubevo Data Concept">
-    <meta property="og:title" content="Cubevo Data Concept | Modern Software Solutions">
-    <meta property="og:description" content="Custom software development, web solutions, IT consulting, and infrastructure services in Romania">
-    <meta property="og:image" content="path-to-your-logo-or-featured-image.jpg">
-    <meta property="og:url" content="https://cubevodata.com">
-    <meta name="twitter:card" content="summary_large_image">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQH2ENS4PG"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-EQH2ENS4PG', { 'anonymize_ip': true });
+        </script>
+        <meta name="keywords" content="software development, custom software, web development, IT consulting, Romania, Arad">
+        <meta name="author" content="Cubevo Data Concept">
+        <meta property="og:title" content="Cubevo Data Concept | Modern Software Solutions">
+        <meta property="og:description" content="Custom software development, web solutions, IT consulting, and infrastructure services in Romania">
+        <meta property="og:image" content="path-to-your-logo-or-featured-image.jpg">
+        <meta property="og:url" content="https://cubevodata.com">
+        <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
-    <link rel="preload" href="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" as="script">
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+        <link rel="preload" href="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" as="script">
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+        <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="content-language" content="ro">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cubevo Data Concept | Modern Software Solutions</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="content-language" content="ro">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cubevo Data Concept | Modern Software Solutions</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        blue: {
-                            400: '#60a5fa',
-                            700: '#1d4ed8',
-                        },
-                        gray: {
-                            100: '#f3f4f6',
-                            900: '#111827'
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            blue: {
+                                400: '#60a5fa',
+                                700: '#1d4ed8',
+                            },
+                            gray: {
+                                100: '#f3f4f6',
+                                900: '#111827'
+                            }
                         }
                     }
                 }
             }
-        }
-    </script>
+        </script>
 
-    <!-- Alpine.js -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script>
-        document.addEventListener('alpine:init', () => {
-            Alpine.store('state', {
-                darkMode: localStorage.getItem('darkMode') === 'true',
-                language: localStorage.getItem('language') || 'ro'
+        <!-- Alpine.js -->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <script>
+            document.addEventListener('alpine:init', () => {
+                Alpine.store('state', {
+                    darkMode: localStorage.getItem('darkMode') === 'true',
+                    language: localStorage.getItem('language') || 'ro'
+                });
             });
-        });
-    </script>
+        </script>
 
-    <!-- Roboto Font -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"> -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+        <!-- Roboto Font -->
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"> -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <style>
-        /* Custom styles for the mirrored 'e' in logo */
-        .mirrored-e {
-            display: inline-block;
-            transform: scale(-1, 1);
-            position: relative;
-            margin: 0 0.05em; /* Add slight spacing around the e */
-            text-shadow: 0 0 1px rgba(59, 130, 246, 0.5); /* Subtle glow effect */
-        }
-        .logo {
-            font-family: 'Roboto', sans-serif;
-            font-weight: 100; /* Thin weight for slimmer appearance */
-            font-size: 2.5rem; /* Bigger letters */
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Base styles */
-        body {
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        /* Light mode defaults */
-        :root {
-            color-scheme: light;
-        }
-
-        /* Dark mode */
-        .dark {
-            color-scheme: dark;
-        }
-
-        /* Base transitions */
-        * {
-            transition-property: background-color, border-color, color;
-            transition-duration: 200ms;
-        }
-
-        /* 3D Cube Styles */
-        .cube-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 200px; /* Fixed width */
-            height: 200px; /* Fixed height */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            perspective: 1000px;
-            z-index: 5;
-        }
-
-        .cube {
-            position: relative;
-            width: 200px; /* Fixed width */
-            height: 200px; /* Fixed height */
-            will-change: transform;
-            transform-style: preserve-3d;
-            animation: rotateCube 30s infinite linear;
-        }
-
-        .face {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 2px solid rgba(59, 130, 246, 0.5);
-            background-color: rgba(59, 130, 246, 0.1);
-            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
-        }
-
-        .dark .face {
-            border-color: rgba(96, 165, 250, 0.5);
-            background-color: rgba(96, 165, 250, 0.1);
-            box-shadow: 0 0 15px rgba(96, 165, 250, 0.3);
-        }
-
-        .face.front { transform: translateZ(100px); }
-        .face.back { transform: rotateY(180deg) translateZ(100px); }
-        .face.left { transform: rotateY(-90deg) translateZ(100px); }
-        .face.right { transform: rotateY(90deg) translateZ(100px); }
-        .face.top { transform: rotateX(90deg) translateZ(100px); }
-        .face.bottom { transform: rotateX(-90deg) translateZ(100px); }
-
-        @keyframes rotateCube {
-            0% { transform: rotateX(0deg) rotateY(0deg); }
-            100% { transform: rotateX(360deg) rotateY(360deg); }
-        }
-
-        @media (max-width: 768px) {
-            .cube-container {
+        <style>
+            /* Custom styles for the mirrored 'e' in logo */
+            .mirrored-e {
+                display: inline-block;
+                transform: scale(-1, 1);
                 position: relative;
-                transform: translate(0, 0);
-                left: auto;
-                top: auto;
-                margin: 2rem auto;
+                margin: 0 0.05em; /* Add slight spacing around the e */
+                text-shadow: 0 0 1px rgba(59, 130, 246, 0.5); /* Subtle glow effect */
+            }
+            .logo {
+                font-family: 'Roboto', sans-serif;
+                font-weight: 100; /* Thin weight for slimmer appearance */
+                font-size: 2.5rem; /* Bigger letters */
+            }
+
+            /* Smooth scrolling */
+            html {
+                scroll-behavior: smooth;
+            }
+
+            /* Base styles */
+            body {
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+            /* Light mode defaults */
+            :root {
+                color-scheme: light;
+            }
+
+            /* Dark mode */
+            .dark {
+                color-scheme: dark;
+            }
+
+            /* Base transitions */
+            * {
+                transition-property: background-color, border-color, color;
+                transition-duration: 200ms;
+            }
+
+            /* 3D Cube Styles */
+            .cube-container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 200px; /* Fixed width */
+                height: 200px; /* Fixed height */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                perspective: 1000px;
+                z-index: 5;
             }
 
             .cube {
-                transform-origin: center center;
+                position: relative;
+                width: 200px; /* Fixed width */
+                height: 200px; /* Fixed height */
+                will-change: transform;
+                transform-style: preserve-3d;
+                animation: rotateCube 30s infinite linear;
             }
-        }
 
-        /* Focus styles for better accessibility */
-        a:focus-visible {
-            outline: 2px solid #3b82f6;
-            outline-offset: 2px;
-        }
-
-        /* Ensure sufficient color contrast */
-        .text-contrast {
-            color: #1a365d; /* Dark blue for light backgrounds */
-        }
-
-        .dark .text-contrast {
-            color: #93c5fd; /* Light blue for dark backgrounds */
-        }
-
-        /* Skip link for keyboard users */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: #1d4ed8;
-            color: white;
-            padding: 8px;
-            z-index: 100;
-        }
-
-        .skip-link:focus {
-            top: 0;
-        }
-
-        *:focus {
-            outline: 2px solid #2563eb;
-            outline-offset: 2px;
-        }
-
-        .focus-visible:focus {
-            outline: 2px solid #2563eb;
-            outline-offset: 2px;
-            box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2563eb;
-        }
-    </style>
-    <style>
-        .cube {
-            will-change: transform;
-            transform-style: preserve-3d;
-        }
-        @keyframes rotateCube {
-            to { transform: rotateX(360deg) rotateY(360deg); }
-        }
-    </style>
-</head>
-<body
-    x-data="{
-        darkMode: localStorage.getItem('darkMode') === 'true',
-        language: localStorage.getItem('language') || 'ro',
-        menuOpen: false
-    }"
-    x-init="
-        $watch('darkMode', val => {
-            localStorage.setItem('darkMode', val);
-            if (val) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
+            .face {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border: 2px solid rgba(59, 130, 246, 0.5);
+                background-color: rgba(59, 130, 246, 0.1);
+                box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
             }
-        });
-        if (darkMode) document.documentElement.classList.add('dark');
-    "
-    :class="darkMode ? 'dark bg-gray-900 text-white' : 'bg-white text-gray-900'"
->
 
-<a href="#main-content"
-   class="skip-link"
-   aria-label="Skip to main content">
-    <span x-show="language === 'en'">Skip to main content</span>
-    <span x-show="language === 'ro'">Salt la conținutul principal</span>
-</a>
+            .dark .face {
+                border-color: rgba(96, 165, 250, 0.5);
+                background-color: rgba(96, 165, 250, 0.1);
+                box-shadow: 0 0 15px rgba(96, 165, 250, 0.3);
+            }
 
-{% include "core/includes/header.html" %}
+            .face.front { transform: translateZ(100px); }
+            .face.back { transform: rotateY(180deg) translateZ(100px); }
+            .face.left { transform: rotateY(-90deg) translateZ(100px); }
+            .face.right { transform: rotateY(90deg) translateZ(100px); }
+            .face.top { transform: rotateX(90deg) translateZ(100px); }
+            .face.bottom { transform: rotateX(-90deg) translateZ(100px); }
 
-<!-- Main content area -->
-<main id="main-content" role="main">
-    {% block main_content %}{% endblock %}
-</main>
+            @keyframes rotateCube {
+                0% { transform: rotateX(0deg) rotateY(0deg); }
+                100% { transform: rotateX(360deg) rotateY(360deg); }
+            }
 
-{% include "core/includes/footer.html" %}
+            @media (max-width: 768px) {
+                .cube-container {
+                    position: relative;
+                    transform: translate(0, 0);
+                    left: auto;
+                    top: auto;
+                    margin: 2rem auto;
+                }
 
-{% include "core/includes/cookies.html" %}
+                .cube {
+                    transform-origin: center center;
+                }
+            }
 
-    <!-- Custom Scripts -->
-    <script>
-        // Additional functionality or analytics
-        document.addEventListener('DOMContentLoaded', function() {
-        // Form submission handling
-        const contactForm = document.querySelector('#contact form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Form handling logic here
-            alert('Thank you for your message. We will get back to you soon!');
-            this.reset();
+            /* Focus styles for better accessibility */
+            a:focus-visible {
+                outline: 2px solid #3b82f6;
+                outline-offset: 2px;
+            }
+
+            /* Ensure sufficient color contrast */
+            .text-contrast {
+                color: #1a365d; /* Dark blue for light backgrounds */
+            }
+
+            .dark .text-contrast {
+                color: #93c5fd; /* Light blue for dark backgrounds */
+            }
+
+            /* Skip link for keyboard users */
+            .skip-link {
+                position: absolute;
+                top: -40px;
+                left: 0;
+                background: #1d4ed8;
+                color: white;
+                padding: 8px;
+                z-index: 100;
+            }
+
+            .skip-link:focus {
+                top: 0;
+            }
+
+            *:focus {
+                outline: 2px solid #2563eb;
+                outline-offset: 2px;
+            }
+
+            .focus-visible:focus {
+                outline: 2px solid #2563eb;
+                outline-offset: 2px;
+                box-shadow: 0 0 0 2px #fff, 0 0 0 4px #2563eb;
+            }
+        </style>
+        <style>
+            .cube {
+                will-change: transform;
+                transform-style: preserve-3d;
+            }
+            @keyframes rotateCube {
+                to { transform: rotateX(360deg) rotateY(360deg); }
+            }
+        </style>
+    </head>
+
+
+    <body
+        x-data="{
+            darkMode: localStorage.getItem('darkMode') === 'true',
+            language: localStorage.getItem('language') || 'ro',
+            menuOpen: false
+        }"
+        x-init="
+            $watch('darkMode', val => {
+                localStorage.setItem('darkMode', val);
+                if (val) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
             });
-        }
+            if (darkMode) document.documentElement.classList.add('dark');
+        "
+        :class="darkMode ? 'dark bg-gray-900 text-white' : 'bg-white text-gray-900'"
+    >
 
-        // SEO optimization - track user engagement
-        const trackEngagement = () => {
-            // Custom engagement tracking code would go here
-        };
+        <a href="#main-content"
+            class="skip-link"
+            aria-label="Skip to main content"
+        >
+            <span x-show="language === 'en'">Skip to main content</span>
+            <span x-show="language === 'ro'">Salt la conținutul principal</span>
+        </a>
 
-        // Call tracking function
-        trackEngagement();
-        });
-    </script>
-    <script>
-        // Check for dark mode preference on page load
-        if (localStorage.getItem('darkMode') === 'true') {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
-      </script>
+        {% include "core/includes/header.html" %}
 
-</body>
+        <!-- Main content area -->
+        <main id="main-content" role="main">
+            {% block main_content %}{% endblock %}
+        </main>
+
+        {% include "core/includes/footer.html" %}
+
+        {% include "core/includes/cookies.html" %}
+
+        <script src="{% static 'js/custom.js' %}"></script>
+
+    </body>
 </html>
