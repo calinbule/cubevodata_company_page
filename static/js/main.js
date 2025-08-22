@@ -18,6 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Call tracking function
     trackEngagement();
+
+    const language = localStorage.getItem('language') || 'ro';
+    if (language === 'en') {
+        document.title = 'Cubevo Data Concept | Modern Software Solutions';
+    } else {
+        document.title = 'Cubevo Data Concept | Soluții software moderne';
+    }
 });
 
 // Check for dark mode preference on page load
