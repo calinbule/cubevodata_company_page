@@ -1,5 +1,3 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -21,8 +19,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    {% comment %} <link rel="preload" href="https://cdn.tailwindcss.com" as="script"> {% endcomment %}
-    {% comment %} <link rel="preload" href="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" as="script"> {% endcomment %}
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" as="script">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +31,7 @@
     <title>Cubevo Data Concept | Modern Software Solutions</title>
 
     <!-- Tailwind CSS -->
-    <script src="{% static 'tailwind/3.4.17/tailwind.min.js' %}"></script>
+    <script src="{% static 'tailwind/3.4.17' %}"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -55,7 +53,7 @@
     </script>
 
     <!-- Alpine.js -->
-    <script defer src="{% static 'alpine.js/3.14.9.js' %}"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script>
         document.addEventListener('alpine:init', () => {
             Alpine.store('state', {
