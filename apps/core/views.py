@@ -20,3 +20,7 @@ def terms(request):
 
 def microservers(request):
     return render(request, 'core/microservers.html')
+
+
+def digital_signage(request):
+    return render(request, 'core/digital_signage.html')

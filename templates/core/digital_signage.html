@@ -1,0 +1,229 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block main_content %}
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-white dark:bg-gray-900 transition-colors duration-200"
+        aria-labelledby="digital-signage-title"
+        aria-roledescription="Digital Signage Solutions">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h1 id="digital-signage-title" class="text-4xl md:text-6xl font-thin text-blue-700 dark:text-blue-400 mb-6">
+                    <span x-show="language === 'en'">Digital Signage Solutions</span>
+                    <span x-show="language === 'ro'">Soluții de semnalistică digitală</span>
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    <span x-show="language === 'en'">
+                        DSig is a powerful digital signage management platform that allows you to control and manage multiple devices from one central location.
+                    </span>
+                    <span x-show="language === 'ro'">
+                        DSig este o platformă de gestionare a dispozitivelor de semnalistică digitală care îți permite să controlezi și să gestionezi multiple dispozitive dintr-o singură locație centrală.
+                    </span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-200">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-thin text-gray-800 dark:text-white mb-4">
+                    <span x-show="language === 'en'">Core Features</span>
+                    <span x-show="language === 'ro'">Funcționalități principale</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Secure User Access -->
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                    <div class="text-blue-600 dark:text-blue-400 mb-4">
+                        <i class="fas fa-shield-alt text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-medium text-gray-800 dark:text-white mb-3">
+                        <span x-show="language === 'en'">Secure User Access</span>
+                        <span x-show="language === 'ro'">Acces securizat</span>
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        <span x-show="language === 'en'">
+                            Each account has access only to assigned devices. Keep your content organized and secure.
+                        </span>
+                        <span x-show="language === 'ro'">
+                            Fiecare cont are acces doar la dispozitivele asociate. Conținutul este menținut organizat și în siguranță.
+                        </span>
+                    </p>
+                </div>
+
+                <!-- Multiple Display Management -->
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                    <div class="text-blue-600 dark:text-blue-400 mb-4">
+                        <i class="fas fa-desktop text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-medium text-gray-800 dark:text-white mb-3">
+                        <span x-show="language === 'en'">Multiple Device Management</span>
+                        <span x-show="language === 'ro'">Gestionarea mai multor dispozitive</span>
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        <span x-show="language === 'en'">
+                            Manage all your digital devices from one dashboard. Whether you have 2 devices or 200, control them all.
+                        </span>
+                        <span x-show="language === 'ro'">
+                            Gestionează toate dispozitivele dintr-un singur panou. Fie că ai 2 dispozitive sau 200, controlează-le pe toate.
+                        </span>
+                    </p>
+                </div>
+
+                <!-- Remote Control -->
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                    <div class="text-blue-600 dark:text-blue-400 mb-4">
+                        <i class="fas fa-wifi text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-medium text-gray-800 dark:text-white mb-3">
+                        <span x-show="language === 'en'">Remote Control</span>
+                        <span x-show="language === 'ro'">Control la distanță</span>
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        <span x-show="language === 'en'">
+                            Restart or shut down devices remotely without visiting each location. Makes troubleshooting easier.
+                        </span>
+                        <span x-show="language === 'ro'">
+                            Repornește sau închide dispozitivele la distanță fără să vizitezi fiecare locație. Perfect pentru depanare fără probleme.
+                        </span>
+                    </p>
+                </div>
+
+                <!-- Content Management -->
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                    <div class="text-blue-600 dark:text-blue-400 mb-4">
+                        <i class="fas fa-images text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-medium text-gray-800 dark:text-white mb-3">
+                        <span x-show="language === 'en'">Easy Image Upload</span>
+                        <span x-show="language === 'ro'">Încărcare ușoară a imaginilor</span>
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        <span x-show="language === 'en'">
+                            Drag and drop multiple images at once. Instantly preview your content before publishing.
+                        </span>
+                        <span x-show="language === 'ro'">
+                            Drag & drop pentru multiple imagini, simultan. Previzualizare instantanee a conținutului inainte de publicare.
+                        </span>
+                    </p>
+                </div>
+
+                <!-- Slideshow Control -->
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                    <div class="text-blue-600 dark:text-blue-400 mb-4">
+                        <i class="fas fa-play-circle text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-medium text-gray-800 dark:text-white mb-3">
+                        <span x-show="language === 'en'">Slideshow Control</span>
+                        <span x-show="language === 'ro'">Control slideshow</span>
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        <span x-show="language === 'en'">
+                            Start, stop, and restart slideshows instantly. Adjust display time and screen orientation.
+                        </span>
+                        <span x-show="language === 'ro'">
+                            Pornește, oprește și repornește slideshow-uri instantaneu. Ajustează timpul de afișare și orientarea.
+                        </span>
+                    </p>
+                </div>
+
+                <!-- Health Monitoring -->
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                    <div class="text-blue-600 dark:text-blue-400 mb-4">
+                        <i class="fas fa-heartbeat text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-medium text-gray-800 dark:text-white mb-3">
+                        <span x-show="language === 'en'">Health Monitoring</span>
+                        <span x-show="language === 'ro'">Monitorizarea sănătății dispozitivelor</span>
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        <span x-show="language === 'en'">
+                            See which devices are online and working properly in real-time.
+                        </span>
+                        <span x-show="language === 'ro'">
+                            Vezi care dispozitive sunt online și funcționează corect în timp real.
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Benefits Section -->
+    <section class="py-16 bg-white dark:bg-gray-900 transition-colors duration-200">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-thin text-center text-gray-800 dark:text-white mb-12">
+                    <span x-show="language === 'en'">Business Benefits</span>
+                    <span x-show="language === 'ro'">Beneficii pentru afaceri</span>
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Save Time & Money -->
+                    <div class="text-center">
+                        <div class="text-blue-600 dark:text-blue-400 mb-4">
+                            <i class="fas fa-clock text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-medium text-gray-800 dark:text-white mb-4">
+                            <span x-show="language === 'en'">Save Time & Money</span>
+                            <span x-show="language === 'ro'">Economisește timp și bani</span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            <span x-show="language === 'en'">
+                                No need to visit each location to update content. Update all locations from one place and minimize downtime.
+                            </span>
+                            <span x-show="language === 'ro'">
+                                Nu mai e nevoie să vizitezi fiecare locație pentru a actualiza conținutul. Actualizează toate dispozitivele dintr-un singur loc și minimizează timpul de nefuncționare.
+                            </span>
+                        </p>
+                    </div>
+
+                    <!-- Reliable & Secure -->
+                    <div class="text-center">
+                        <div class="text-blue-600 dark:text-blue-400 mb-4">
+                            <i class="fas fa-lock text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-medium text-gray-800 dark:text-white mb-4">
+                            <span x-show="language === 'en'">Reliable & Secure</span>
+                            <span x-show="language === 'ro'">Fiabil și sigur</span>
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            <span x-show="language === 'en'">
+                                Secure connections protect your content and data. Reliable system with minimal maintenance required.
+                            </span>
+                            <span x-show="language === 'ro'">
+                                Conexiunile securizate protejează conținutul și datele. Sistem fiabil cu eforturi de întreținere minimale.
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 bg-blue-700 dark:bg-blue-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-thin mb-6">
+                <span x-show="language === 'en'">Ready to Upgrade Your Business?</span>
+                <span x-show="language === 'ro'">Ești gata să-ți upgradezi afacerea?</span>
+            </h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                <span x-show="language === 'en'">
+                    Start managing all your digital signage from one place. Increase efficiency, save time, and deliver better customer experiences.
+                </span>
+                <span x-show="language === 'ro'">
+                    Gestionezi toate dispozitivele de semnalistică digitală dintr-un singur loc. Crește eficiența, economisește timp și oferă experiențe mai bune clienților.
+                </span>
+            </p>
+            <a href="https://dsig.cubevodata.com/"
+               class="inline-block bg-white text-blue-700 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200">
+                <span x-show="language === 'en'">Get Started Today</span>
+                <span x-show="language === 'ro'">Începe astăzi</span>
+            </a>
+        </div>
+    </section>
+{% endblock %}
