@@ -1,0 +1,17 @@
+{% comment %} Capability card. Params:
+   icon en_title ro_title en_desc ro_desc
+   en_a1 en_a2 en_a3  ro_a1 ro_a2 ro_a3  (three advantage chips) {% endcomment %}
+<div class="cv-card cv-card--outline cv-card--pad-lg">
+    <div class="cap">
+        <div class="cap__ico">{% include "core/includes/icon.html" with name=icon size=22 %}</div>
+        <div>
+            <h3><span x-show="language === 'en'">{{ en_title }}</span><span x-show="language === 'ro'">{{ ro_title }}</span></h3>
+            <p><span x-show="language === 'en'">{{ en_desc }}</span><span x-show="language === 'ro'">{{ ro_desc }}</span></p>
+            <div class="cap__adv">
+                <span>{% include "core/includes/icon.html" with name="check" size=13 %} <span x-show="language === 'en'">{{ en_a1 }}</span><span x-show="language === 'ro'">{{ ro_a1 }}</span></span>
+                <span>{% include "core/includes/icon.html" with name="check" size=13 %} <span x-show="language === 'en'">{{ en_a2 }}</span><span x-show="language === 'ro'">{{ ro_a2 }}</span></span>
+                <span>{% include "core/includes/icon.html" with name="check" size=13 %} <span x-show="language === 'en'">{{ en_a3 }}</span><span x-show="language === 'ro'">{{ ro_a3 }}</span></span>
+            </div>
+        </div>
+    </div>
+</div>

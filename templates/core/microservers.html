@@ -1,204 +1,111 @@
-{% extends "core/base.html" %}
+{% extends "core/base_v2.html" %}
+{% load static %}
+
+{% block title %}Microservers & Private Cloud | Cubevo Data Concept{% endblock %}
 
 {% block main_content %}
-<section
-    aria-labelledby="microservers-title"
-    class="pt-32 pb-16 bg-white dark:bg-gray-900 transition-colors duration-200"
-    role="region"
-    aria-roledescription="Microservers"
->
-    <div class="container mx-auto px-4">
-        <!-- SEO Title & Description -->
-        <h1 id="microservers-title" class="text-4xl md:text-5xl font-bold mb-6 text-center text-blue-700 dark:text-blue-400">
-            <span x-show="language === 'en'">Microservers & Private Cloud Solutions</span>
-            <span x-show="language === 'ro'">Microservere & Soluții Cloud Private</span>
-        </h1>
-        <p class="text-xl mb-10 text-center text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-            <span x-show="language === 'en'">
-                Discover our modern microserver and private cloud solutions for secure, scalable, and energy-efficient business infrastructure.
-            </span>
-            <span x-show="language === 'ro'">
-                Descoperă soluțiile noastre moderne de microservere și cloud privat pentru o infrastructură de afaceri sigură, scalabilă și eficientă energetic.
-            </span>
-        </p>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+        <div class="hero__grid-bg"></div>
+        <div class="hero__glow"></div>
+        <div class="wrap hero__inner">
+            <div class="hero__copy">
+                <span class="eyebrow">{% include "core/includes/icon.html" with name="server" size=14 %} <span x-show="language === 'en'">On-prem · Private cloud</span><span x-show="language === 'ro'">On-prem · Cloud privat</span></span>
+                <h1>
+                    <span x-show="language === 'en'">Your own private cloud, <span class="accent">in your office.</span></span>
+                    <span x-show="language === 'ro'">Cloud-ul tău privat, <span class="accent">chiar la birou.</span></span>
+                </h1>
+                <p class="hero__lead">
+                    <span x-show="language === 'en'">Modern microservers for secure, scalable and energy-efficient business infrastructure — one quiet box that does the work of a server rack.</span>
+                    <span x-show="language === 'ro'">Microservere moderne pentru o infrastructură sigură, scalabilă și eficientă energetic — o singură cutie silențioasă cât un rack întreg.</span>
+                </p>
+                <div class="hero__cta">
+                    <a class="cv-btn cv-btn--primary cv-btn--lg" href="#contact">
+                        <span class="cv-btn__label"><span x-show="language === 'en'">Talk to us</span><span x-show="language === 'ro'">Hai să vorbim</span></span>
+                        <span class="cv-btn__icon">{% include "core/includes/icon.html" with name="arrowRight" size=18 %}</span>
+                    </a>
+                    <a class="cv-btn cv-btn--secondary cv-btn--lg" href="#capabilities">
+                        <span class="cv-btn__label"><span x-show="language === 'en'">See capabilities</span><span x-show="language === 'ro'">Vezi capabilitățile</span></span>
+                    </a>
+                </div>
+                <div class="spec-strip">
+                    <span class="chip">{% include "core/includes/icon.html" with name="leaf" size=16 %} <span x-show="language === 'en'">Energy-efficient</span><span x-show="language === 'ro'">Eficient energetic</span></span>
+                    <span class="chip">{% include "core/includes/icon.html" with name="power" size=16 %} <span x-show="language === 'en'">Silent & cool</span><span x-show="language === 'ro'">Silențios & rece</span></span>
+                    <span class="chip">{% include "core/includes/icon.html" with name="refresh" size=16 %} <span x-show="language === 'en'">24/7 uptime</span><span x-show="language === 'ro'">Funcționare 24/7</span></span>
+                    <span class="chip">{% include "core/includes/icon.html" with name="shield" size=16 %} <span x-show="language === 'en'">Private by design</span><span x-show="language === 'ro'">Privat din start</span></span>
+                </div>
+            </div>
 
-        <!-- Product List Section -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
-            <!-- Local File Server / NAS -->
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow flex flex-col h-full">
-                <div class="flex items-center mb-4">
-                    <i class="fas fa-folder-open text-blue-700 dark:text-blue-400 text-3xl mr-3"></i>
-                    <h2 class="text-xl font-semibold">
-                        <span x-show="language === 'en'">Local File Server / NAS</span>
-                        <span x-show="language === 'ro'">Server de Fișiere Local / NAS</span>
-                    </h2>
+            <div class="device-stage" aria-hidden="true">
+                <div class="device">
+                    <div class="device__glow"></div>
+                    <div class="device__leds"><i class="on"></i><i class="brand"></i><i></i><i></i></div>
+                    <div class="device__bays"><span></span><span></span><span></span><span></span></div>
+                    <div class="device__mark"><img src="{% static 'img/logos/cubevo-mark-white.svg' %}" alt=""></div>
                 </div>
-                <p class="text-gray-700 dark:text-gray-300 flex-grow">
-                    <span x-show="language === 'en'">
-                        Store, organize, and share company documents securely within your office. Your team can access files quickly, without relying on external cloud services.<br>
-                        <strong>Advantages:</strong> Keeps sensitive data in-house, fast access to files, easy to manage and backup.
-                    </span>
-                    <span x-show="language === 'ro'">
-                        Stocați, organizați și partajați documentele companiei în siguranță, direct în biroul dvs. Echipa are acces rapid la fișiere, fără a depinde de servicii cloud externe.<br>
-                        <strong>Avantaje:</strong> Datele sensibile rămân interne, acces rapid la fișiere, administrare și backup ușor.
-                    </span>
-                </p>
-            </div>
-            <!-- Private Cloud Sync -->
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow flex flex-col h-full">
-                <div class="flex items-center mb-4">
-                    <i class="fas fa-cloud-upload-alt text-indigo-600 dark:text-blue-300 text-3xl mr-3"></i>
-                    <h2 class="text-xl font-semibold">
-                        <span x-show="language === 'en'">Private Cloud Sync</span>
-                        <span x-show="language === 'ro'">Cloud Privat pentru Sincronizare</span>
-                    </h2>
-                </div>
-                <p class="text-gray-700 dark:text-gray-300 flex-grow">
-                    <span x-show="language === 'en'">
-                        Synchronize calendars, contacts, and documents across all your devices, just like popular cloud services—but hosted privately in your office.<br>
-                        <strong>Advantages:</strong> Full control over your data, no monthly cloud fees, seamless collaboration.
-                    </span>
-                    <span x-show="language === 'ro'">
-                        Sincronizați calendare, contacte și documente pe toate dispozitivele, la fel ca în serviciile cloud populare, dar găzduite privat în sediul dvs.<br>
-                        <strong>Avantaje:</strong> Control total asupra datelor, fără taxe lunare, colaborare eficientă.
-                    </span>
-                </p>
-            </div>
-            <!-- Network Monitoring & Security -->
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow flex flex-col h-full">
-                <div class="flex items-center mb-4">
-                    <i class="fas fa-shield-alt text-green-600 dark:text-green-400 text-3xl mr-3"></i>
-                    <h2 class="text-xl font-semibold">
-                        <span x-show="language === 'en'">Network Monitoring & Security</span>
-                        <span x-show="language === 'ro'">Monitorizare și Securitate Rețea</span>
-                    </h2>
-                </div>
-                <p class="text-gray-700 dark:text-gray-300 flex-grow">
-                    <span x-show="language === 'en'">
-                        Monitor your company’s network for unusual activity, block unwanted ads, and keep your internet safe for everyone.<br>
-                        <strong>Advantages:</strong> Proactive security alerts, improved productivity, peace of mind.
-                    </span>
-                    <span x-show="language === 'ro'">
-                        Monitorizați rețeaua companiei pentru activități neobișnuite, blocați reclamele nedorite și asigurați siguranța internetului pentru toți.<br>
-                        <strong>Avantaje:</strong> Alerte de securitate proactive, productivitate crescută, liniște pentru afacerea dvs.
-                    </span>
-                </p>
-            </div>
-            <!-- Digital Signage Controller -->
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow flex flex-col h-full">
-                <div class="flex items-center mb-4">
-                    <i class="fas fa-tv text-pink-600 dark:text-pink-400 text-3xl mr-3"></i>
-                    <h2 class="text-xl font-semibold">
-                        <span x-show="language === 'en'">Digital Signage Controller</span>
-                        <span x-show="language === 'ro'">Controller pentru Semnalistică Digitală</span>
-                    </h2>
-                </div>
-                <p class="text-gray-700 dark:text-gray-300 flex-grow">
-                    <span x-show="language === 'en'">
-                        Display announcements, promotions, or schedules on screens in your office, shop, or waiting area—updated instantly from your desk.<br>
-                        <strong>Advantages:</strong> Professional image, easy to update, cost-effective.
-                    </span>
-                    <span x-show="language === 'ro'">
-                        Afișați anunțuri, promoții sau programe pe ecrane în birou, magazin sau recepție—actualizate instant de la birou.<br>
-                        <strong>Avantaje:</strong> Imagine profesională, actualizare ușoară, soluție economică.
-                    </span>
-                </p>
-            </div>
-            <!-- VPN Server -->
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow flex flex-col h-full">
-                <div class="flex items-center mb-4">
-                    <i class="fas fa-lock text-yellow-600 dark:text-yellow-400 text-3xl mr-3"></i>
-                    <h2 class="text-xl font-semibold">
-                        <span x-show="language === 'en'">VPN Server</span>
-                        <span x-show="language === 'ro'">Server VPN</span>
-                    </h2>
-                </div>
-                <p class="text-gray-700 dark:text-gray-300 flex-grow">
-                    <span x-show="language === 'en'">
-                        Allow your team to securely access company resources from anywhere, whether working from home or traveling.<br>
-                        <strong>Advantages:</strong> Secure remote access, protects company data, enables flexible work.
-                    </span>
-                    <span x-show="language === 'ro'">
-                        Permiteți echipei să acceseze în siguranță resursele companiei de oriunde, fie de acasă, fie din deplasare.<br>
-                        <strong>Avantaje:</strong> Acces remote securizat, protecția datelor, flexibilitate în muncă.
-                    </span>
-                </p>
-            </div>
-            <!-- Local Web Server -->
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow flex flex-col h-full">
-                <div class="flex items-center mb-4">
-                    <i class="fas fa-globe text-cyan-600 dark:text-cyan-400 text-3xl mr-3"></i>
-                    <h2 class="text-xl font-semibold">
-                        <span x-show="language === 'en'">Local Web Server</span>
-                        <span x-show="language === 'ro'">Server Web Local</span>
-                    </h2>
-                </div>
-                <p class="text-gray-700 dark:text-gray-300 flex-grow">
-                    <span x-show="language === 'en'">
-                        Host internal websites, dashboards, or documentation that only your team can access, improving communication and efficiency.<br>
-                        <strong>Advantages:</strong> Keeps information private, fast access, customizable.
-                    </span>
-                    <span x-show="language === 'ro'">
-                        Găzduiți site-uri interne, dashboard-uri sau documentație accesibilă doar echipei, pentru o comunicare și eficiență mai bună.<br>
-                        <strong>Avantaje:</strong> Informații private, acces rapid, personalizare.
-                    </span>
-                </p>
-            </div>
-            <!-- Print Server -->
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow flex flex-col h-full">
-                <div class="flex items-center mb-4">
-                    <i class="fas fa-print text-purple-600 dark:text-purple-400 text-3xl mr-3"></i>
-                    <h2 class="text-xl font-semibold">
-                        <span x-show="language === 'en'">Print Server</span>
-                        <span x-show="language === 'ro'">Server de Printare</span>
-                    </h2>
-                </div>
-                <p class="text-gray-700 dark:text-gray-300 flex-grow">
-                    <span x-show="language === 'en'">
-                        Centralize and manage all office printers, making it easy for everyone to print from any device.<br>
-                        <strong>Advantages:</strong> Simplifies printing, reduces IT headaches, works with existing printers.
-                    </span>
-                    <span x-show="language === 'ro'">
-                        Centralizați și administrați toate imprimantele din birou, astfel încât oricine să poată imprima de pe orice dispozitiv.<br>
-                        <strong>Avantaje:</strong> Simplifică procesul de printare, reduce problemele IT, compatibil cu imprimantele existente.
-                    </span>
-                </p>
-            </div>
-            <!-- Backup Server -->
-            <div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow flex flex-col h-full">
-                <div class="flex items-center mb-4">
-                    <i class="fas fa-database text-orange-600 dark:text-orange-400 text-3xl mr-3"></i>
-                    <h2 class="text-xl font-semibold">
-                        <span x-show="language === 'en'">Backup Server</span>
-                        <span x-show="language === 'ro'">Server de Backup</span>
-                    </h2>
-                </div>
-                <p class="text-gray-700 dark:text-gray-300 flex-grow">
-                    <span x-show="language === 'en'">
-                        Automatically back up important files and data, so you’re protected against accidental loss or hardware failure.<br>
-                        <strong>Advantages:</strong> Reliable data protection, quick recovery, no need for expensive backup services.
-                    </span>
-                    <span x-show="language === 'ro'">
-                        Realizați automat backup pentru fișierele și datele importante, pentru a fi protejat împotriva pierderilor accidentale sau a defecțiunilor hardware.<br>
-                        <strong>Avantaje:</strong> Protecție fiabilă a datelor, recuperare rapidă, fără servicii de backup costisitoare.
-                    </span>
-                </p>
             </div>
         </div>
+    </section>
 
-        <!-- Call to Action -->
-        <div class="text-center mt-10">
-            <a href="{% url 'index' %}#contact"
-               class="inline-block bg-blue-700 hover:bg-blue-800 text-white py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg font-medium"
-               aria-label="Contact us about microservers">
-                <span x-show="language === 'en'">
-                    Contact us today and let us help make your business more efficient!
-                </span>
-                <span x-show="language === 'ro'">
-                    Contactați-ne și vă ajutăm să vă faceți afacerea mai eficientă!
-                </span>
-            </a>
+    <!-- ============ CAPABILITIES ============ -->
+    <section class="section" id="capabilities">
+        <div class="wrap">
+            <div class="section__head">
+                <span class="eyebrow">{% include "core/includes/icon.html" with name="cube" size=14 %} <span x-show="language === 'en'">One box, eight jobs</span><span x-show="language === 'ro'">O cutie, opt roluri</span></span>
+                <h2><span x-show="language === 'en'">Everything you’d self-host, in one place</span><span x-show="language === 'ro'">Tot ce ai self-host-ui, într-un singur loc</span></h2>
+                <p><span x-show="language === 'en'">Pick the roles your business needs today and add more any time — it all runs on the same hardware.</span><span x-show="language === 'ro'">Alege rolurile de care ai nevoie azi și adaugă oricând altele — rulează pe același hardware.</span></p>
+            </div>
+            <div class="cap-grid">
+                {% include "core/includes/_cap_card.html" with icon="database" en_title="Local File Server / NAS" ro_title="Server de Fișiere / NAS" en_desc="Store, organise and share company documents securely inside your office." ro_desc="Stochează, organizează și partajează documentele în siguranță, la birou." en_a1="Data stays in-house" en_a2="Fast access" en_a3="Easy backup" ro_a1="Date interne" ro_a2="Acces rapid" ro_a3="Backup ușor" %}
+                {% include "core/includes/_cap_card.html" with icon="cloud" en_title="Private Cloud Sync" ro_title="Cloud Privat de Sincronizare" en_desc="Sync calendars, contacts and files across devices — hosted privately." ro_desc="Sincronizează calendare, contacte și fișiere — găzduit privat." en_a1="Full control" en_a2="No monthly fees" en_a3="Seamless" ro_a1="Control total" ro_a2="Fără taxe lunare" ro_a3="Colaborare" %}
+                {% include "core/includes/_cap_card.html" with icon="shield" en_title="Network Monitoring & Security" ro_title="Monitorizare & Securitate" en_desc="Watch for unusual activity, block unwanted ads, keep the network safe." ro_desc="Detectează activități neobișnuite, blochează reclame, protejează rețeaua." en_a1="Proactive alerts" en_a2="More productive" en_a3="Peace of mind" ro_a1="Alerte proactive" ro_a2="Productivitate" ro_a3="Liniște" %}
+                {% include "core/includes/_cap_card.html" with icon="monitor" en_title="Digital Signage Controller" ro_title="Controller Semnalistică" en_desc="Drive announcements and promos on office or shop screens, updated instantly." ro_desc="Afișează anunțuri și promoții pe ecrane, actualizate instant." en_a1="Professional image" en_a2="Instant updates" en_a3="Cost-effective" ro_a1="Imagine pro" ro_a2="Update instant" ro_a3="Economic" %}
+                {% include "core/includes/_cap_card.html" with icon="lock" en_title="VPN Server" ro_title="Server VPN" en_desc="Securely reach company resources from home or on the road." ro_desc="Acces securizat la resursele companiei de acasă sau din deplasare." en_a1="Secure remote" en_a2="Protects data" en_a3="Flexible work" ro_a1="Acces securizat" ro_a2="Protecție date" ro_a3="Flexibilitate" %}
+                {% include "core/includes/_cap_card.html" with icon="globe" en_title="Local Web Server" ro_title="Server Web Local" en_desc="Host internal sites, dashboards and docs only your team can reach." ro_desc="Găzduiește site-uri interne, dashboard-uri și documentație pentru echipă." en_a1="Private" en_a2="Fast access" en_a3="Customisable" ro_a1="Privat" ro_a2="Acces rapid" ro_a3="Personalizabil" %}
+                {% include "core/includes/_cap_card.html" with icon="printer" en_title="Print Server" ro_title="Server de Printare" en_desc="Centralise office printers so anyone can print from any device." ro_desc="Centralizează imprimantele ca oricine să printeze de pe orice dispozitiv." en_a1="Simpler printing" en_a2="Fewer IT issues" en_a3="Works as-is" ro_a1="Mai simplu" ro_a2="Mai puține probleme" ro_a3="Compatibil" %}
+                {% include "core/includes/_cap_card.html" with icon="refresh" en_title="Backup Server" ro_title="Server de Backup" en_desc="Automatically back up important files against loss or hardware failure." ro_desc="Backup automat pentru fișierele importante, împotriva pierderilor." en_a1="Reliable" en_a2="Quick recovery" en_a3="No extra fees" ro_a1="Fiabil" ro_a2="Recuperare rapidă" ro_a3="Fără costuri extra" %}
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- ============ WHY ============ -->
+    <section class="section band" id="why">
+        <div class="wrap">
+            <div class="section__head">
+                <span class="eyebrow">{% include "core/includes/icon.html" with name="leaf" size=14 %} <span x-show="language === 'en'">Why a microserver</span><span x-show="language === 'ro'">De ce un microserver</span></span>
+                <h2><span x-show="language === 'en'">Own your infrastructure</span><span x-show="language === 'ro'">Deține-ți infrastructura</span></h2>
+            </div>
+            <div class="why-grid">
+                <div class="why">
+                    <div class="why__ico">{% include "core/includes/icon.html" with name="shield" size=24 %}</div>
+                    <h3><span x-show="language === 'en'">Private by design</span><span x-show="language === 'ro'">Privat din start</span></h3>
+                    <p><span x-show="language === 'en'">Sensitive data never leaves the building. You decide who has access — not a third party.</span><span x-show="language === 'ro'">Datele sensibile nu părăsesc clădirea. Tu decizi cine are acces — nu un terț.</span></p>
+                </div>
+                <div class="why">
+                    <div class="why__ico">{% include "core/includes/icon.html" with name="wallet" size=24 %}</div>
+                    <h3><span x-show="language === 'en'">No monthly cloud bills</span><span x-show="language === 'ro'">Fără facturi lunare</span></h3>
+                    <p><span x-show="language === 'en'">Buy the box once and own it. Replace recurring subscriptions with hardware you control.</span><span x-show="language === 'ro'">Cumperi cutia o dată și e a ta. Înlocuiești abonamentele cu hardware controlat de tine.</span></p>
+                </div>
+                <div class="why">
+                    <div class="why__ico">{% include "core/includes/icon.html" with name="leaf" size=24 %}</div>
+                    <h3><span x-show="language === 'en'">Efficient & silent</span><span x-show="language === 'ro'">Eficient & silențios</span></h3>
+                    <p><span x-show="language === 'en'">Sips power, runs cool and quiet, and fits on a shelf — 24/7, with minimal maintenance.</span><span x-show="language === 'ro'">Consum redus, răcoare și liniște, încape pe un raft — 24/7, cu mentenanță minimă.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA BAND ============ -->
+    <section class="section contact" id="contact">
+        <div class="wrap">
+            <div class="contact__card">
+                <div class="grid-bg"></div>
+                <h2><span x-show="language === 'en'">Make your business more efficient</span><span x-show="language === 'ro'">Fă-ți afacerea mai eficientă</span></h2>
+                <p><span x-show="language === 'en'">Tell us what you need to run in-house and we’ll spec the right microserver for you.</span><span x-show="language === 'ro'">Spune-ne ce vrei să rulezi intern și configurăm microserverul potrivit pentru tine.</span></p>
+                <a class="contact__email" href="mailto:contact@cubevodata.com">
+                    {% include "core/includes/icon.html" with name="mail" size=20 %} contact@cubevodata.com
+                </a>
+            </div>
+        </div>
+    </section>
 {% endblock %}

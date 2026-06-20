@@ -1,0 +1,45 @@
+/* Cubevo — project glue for the redesigned (v2) pages.
+   App-specific bits that aren't part of the portable design kit:
+   skip link, cookie banner, back-to-top. All values from tokens. */
+
+html { scroll-behavior: smooth; }
+
+[x-cloak] { display: none !important; }
+
+/* Accessibility skip link */
+.skip-link {
+  position: absolute; top: -48px; left: var(--space-4); z-index: 100;
+  background: var(--brand); color: var(--on-brand);
+  padding: var(--space-2) var(--space-4); border-radius: var(--radius-md);
+  font-size: var(--text-sm); font-weight: var(--weight-semibold);
+  transition: top var(--dur-fast) var(--ease-out);
+}
+.skip-link:focus { top: var(--space-3); }
+
+/* Cookie consent banner */
+.cookie-banner {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+  background: var(--surface-card); border-top: 1px solid var(--border-default);
+  box-shadow: var(--shadow-lg);
+}
+.cookie-banner__inner {
+  max-width: var(--container-xl); margin: 0 auto; padding: var(--space-4) var(--space-6);
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); flex-wrap: wrap;
+}
+.cookie-banner p { font-size: var(--text-sm); color: var(--text-secondary); max-width: 70ch; }
+
+/* Legal/doc prose: h3 subheadings (site.css only styles .prose h2/p/ul) */
+.prose h3 { font-size: var(--text-lg); margin-top: var(--space-8); scroll-margin-top: 96px; }
+
+/* Back-to-top */
+.to-top {
+  position: fixed; bottom: var(--space-8); right: var(--space-8); z-index: 40;
+  width: 44px; height: 44px; border-radius: var(--radius-full);
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--brand); color: var(--on-brand); border: none; cursor: pointer;
+  box-shadow: var(--shadow-brand);
+  transition: background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+.to-top:hover { background: var(--brand-hover); }
+.to-top:active { transform: translateY(1px); }
+.to-top:focus-visible { outline: none; box-shadow: var(--shadow-focus); }

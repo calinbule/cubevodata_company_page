@@ -1,0 +1,27 @@
+<!-- Scroll-spy for legal/doc pages: highlights the TOC link of the section in view -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var links = Array.prototype.slice.call(document.querySelectorAll('.doc-toc a'));
+        if (!links.length) return;
+        var byId = {};
+        links.forEach(function (a) {
+            var id = a.getAttribute('href').slice(1);
+            byId[id] = a;
+        });
+        var headings = links
+            .map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); })
+            .filter(Boolean);
+
+        function setActive(id) {
+            links.forEach(function (a) { a.classList.remove('active'); });
+            if (byId[id]) byId[id].classList.add('active');
+        }
+
+        var obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) { if (e.isIntersecting) setActive(e.target.id); });
+        }, { rootMargin: '-90px 0px -70% 0px', threshold: 0 });
+
+        headings.forEach(function (h) { obs.observe(h); });
+        if (headings[0]) setActive(headings[0].id);
+    });
+</script>

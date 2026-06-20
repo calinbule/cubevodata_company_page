@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ro" data-theme="light">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQH2ENS4PG"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-EQH2ENS4PG', { 'anonymize_ip': true });
+        </script>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="content-language" content="ro">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="software development, custom software, web development, IT consulting, Romania, Arad">
+        <meta name="author" content="Cubevo Data Concept">
+        <meta property="og:title" content="Cubevo Data Concept | Modern Software Solutions">
+        <meta property="og:description" content="Custom software development, web solutions, IT consulting, and infrastructure services in Romania">
+        <meta property="og:image" content="path-to-your-logo-or-featured-image.jpg">
+        <meta property="og:url" content="https://cubevodata.com">
+        <meta name="twitter:card" content="summary_large_image">
+        <title>{% block title %}Cubevo | Modern Software Solutions{% endblock %}</title>
+
+        <!-- No-FOUC theme: set data-theme before first paint -->
+        <script>
+            (function () {
+                try {
+                    var t = localStorage.getItem('cubevo-theme');
+                    if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                    document.documentElement.setAttribute('data-theme', t);
+                } catch (e) {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                }
+            })();
+        </script>
+
+        <!-- Design-system styles: tokens → components → marketing layout -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="{% static 'css/ds/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'css/ds/components.css' %}">
+        <link rel="stylesheet" href="{% static 'css/ds/site.css' %}">
+        <link rel="stylesheet" href="{% static 'css/ds/site-extras.css' %}">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
+
+        <!-- Alpine.js -->
+        <script defer src="{% static 'alpine.js/3.14.9.js' %}"></script>
+    </head>
+
+    <body
+        class="site"
+        x-data="{
+            theme: document.documentElement.getAttribute('data-theme') || 'light',
+            language: localStorage.getItem('language') || 'ro',
+            menuOpen: false
+        }"
+        x-init="
+            $watch('theme', val => {
+                document.documentElement.setAttribute('data-theme', val);
+                localStorage.setItem('cubevo-theme', val);
+            });
+            $watch('language', val => localStorage.setItem('language', val));
+        "
+    >
+        <a href="#main-content" class="skip-link">
+            <span x-show="language === 'en'">Skip to main content</span>
+            <span x-show="language === 'ro'">Salt la conținutul principal</span>
+        </a>
+
+        {% include "core/includes/header_v2.html" %}
+
+        <main id="main-content" role="main">
+            {% block main_content %}{% endblock %}
+        </main>
+
+        {% include "core/includes/footer_v2.html" %}
+
+        {% include "core/includes/cookies_v2.html" %}
+
+        {% block extra_js %}{% endblock %}
+    </body>
+</html>

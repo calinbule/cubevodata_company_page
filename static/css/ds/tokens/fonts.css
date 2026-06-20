@@ -1,0 +1,14 @@
+/* Cubevo — Webfonts
+   ------------------------------------------------------------------
+   Brand fonts are loaded from Google Fonts (see CAVEAT in readme.md).
+   No proprietary brand font files were provided, so these are the
+   closest high-quality matches:
+     · Space Grotesk  → display / headings (technical geometric grotesk)
+     · Hanken Grotesk → body / UI text (clean, friendly, highly legible)
+     · JetBrains Mono → code, eyebrows, technical labels
+   The "cubevo" logo wordmark itself is a rounded geometric face
+   (closest match: Quicksand / Comfortaa) and is shipped as an image
+   asset under assets/logos/ rather than rebuilt in type.
+   ------------------------------------------------------------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');

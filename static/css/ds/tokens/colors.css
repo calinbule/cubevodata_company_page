@@ -1,0 +1,167 @@
+/* Cubevo — Color tokens
+   ==================================================================
+   Two layers:
+   1. PRIMITIVES — raw palette ramps (theme-independent). Never use a
+      primitive directly in a component; use a semantic alias.
+   2. SEMANTIC ALIASES — meaning-based tokens that flip between
+      light (:root / [data-theme="light"]) and dark ([data-theme="dark"]).
+   ================================================================== */
+
+:root {
+  /* ---- Brand blue (centred on the Cubevo cobalt #2050D8) ---- */
+  --blue-50:  #eef2fe;
+  --blue-100: #dde4fd;
+  --blue-200: #bccafb;
+  --blue-300: #94a8f7;
+  --blue-400: #6783f0;
+  --blue-500: #3a5ee6;
+  --blue-600: #2050d8;   /* ← primary brand */
+  --blue-700: #1b40b4;
+  --blue-800: #1b3992;
+  --blue-900: #1b3375;
+  --blue-950: #131f47;
+
+  /* ---- Signal accent (electric cyan — AI / innovation, used sparingly) ---- */
+  --signal-300: #7ee7f5;
+  --signal-400: #2fd4ea;
+  --signal-500: #08b4d4;
+  --signal-600: #0a90ad;
+
+  /* ---- Cool neutrals (blue-tinted gray) ---- */
+  --gray-0:   #ffffff;
+  --gray-25:  #fafbfd;
+  --gray-50:  #f4f6fa;
+  --gray-100: #eaeef4;
+  --gray-200: #dce2ec;
+  --gray-300: #c3ccda;
+  --gray-400: #97a3b6;
+  --gray-500: #6b7688;
+  --gray-600: #4c5666;
+  --gray-700: #353e4d;
+  --gray-800: #222a38;
+  --gray-900: #141a26;
+  --gray-950: #0a0e18;
+
+  /* ---- Semantic hues ---- */
+  --green-500: #16a34a;
+  --green-600: #128a3f;
+  --green-bg-l: #e7f6ed;
+  --green-bg-d: #0f2a1c;
+
+  --amber-500: #e08a00;
+  --amber-600: #c06f00;
+  --amber-bg-l: #fdf2dc;
+  --amber-bg-d: #2c2008;
+
+  --red-500: #e0392b;
+  --red-600: #c42b1f;
+  --red-bg-l: #fde9e7;
+  --red-bg-d: #2e1311;
+}
+
+/* ==================  LIGHT THEME  ================== */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* backgrounds */
+  --bg-page:    var(--gray-0);
+  --bg-subtle:  var(--gray-50);
+  --bg-muted:   var(--gray-100);
+  --bg-inverse: var(--gray-950);
+
+  /* surfaces (cards, sheets, menus) */
+  --surface-card:    var(--gray-0);
+  --surface-raised:  var(--gray-0);
+  --surface-sunken:  var(--gray-50);
+  --surface-overlay: rgba(255, 255, 255, 0.72);
+
+  /* borders */
+  --border-subtle:  var(--gray-100);
+  --border-default: var(--gray-200);
+  --border-strong:  var(--gray-300);
+
+  /* text */
+  --text-primary:   var(--gray-900);
+  --text-secondary: var(--gray-600);
+  --text-tertiary:  var(--gray-500);
+  --text-muted:     var(--gray-400);
+  --text-inverse:   var(--gray-0);
+  --text-link:      var(--blue-600);
+
+  /* brand */
+  --brand:         var(--blue-600);
+  --brand-hover:   var(--blue-700);
+  --brand-active:  var(--blue-800);
+  --brand-subtle:  var(--blue-50);
+  --brand-border:  var(--blue-200);
+  --brand-text:    var(--blue-700);
+  --on-brand:      #ffffff;
+
+  /* accent */
+  --accent:        var(--signal-500);
+  --accent-text:   var(--signal-600);
+  --accent-subtle: #e2f8fc;
+
+  /* semantic */
+  --success:        var(--green-600);
+  --success-subtle: var(--green-bg-l);
+  --warning:        var(--amber-600);
+  --warning-subtle: var(--amber-bg-l);
+  --danger:         var(--red-600);
+  --danger-subtle:  var(--red-bg-l);
+
+  /* utility */
+  --focus-ring: color-mix(in srgb, var(--blue-600) 45%, transparent);
+  --backdrop:   rgba(15, 20, 34, 0.42);
+  --grid-line:  rgba(20, 26, 38, 0.045);
+}
+
+/* ==================  DARK THEME  ================== */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg-page:    #0a0e18;
+  --bg-subtle:  #10151f;
+  --bg-muted:   #161c28;
+  --bg-inverse: var(--gray-50);
+
+  --surface-card:    #121826;
+  --surface-raised:  #18202f;
+  --surface-sunken:  #0c111b;
+  --surface-overlay: rgba(18, 24, 38, 0.72);
+
+  --border-subtle:  #1c2331;
+  --border-default: #2a3342;
+  --border-strong:  #3a4456;
+
+  --text-primary:   #eef1f7;
+  --text-secondary: #aeb8c8;
+  --text-tertiary:  #8693a6;
+  --text-muted:     #6b7688;
+  --text-inverse:   var(--gray-900);
+  --text-link:      #8aa6f9;
+
+  --brand:         var(--blue-500);
+  --brand-hover:   var(--blue-400);
+  --brand-active:  var(--blue-300);
+  --brand-subtle:  #16213f;
+  --brand-border:  #2a3a6b;
+  --brand-text:    #8aa6f9;
+  --on-brand:      #ffffff;
+
+  --accent:        var(--signal-400);
+  --accent-text:   var(--signal-300);
+  --accent-subtle: #0c2a33;
+
+  --success:        #34c46a;
+  --success-subtle: var(--green-bg-d);
+  --warning:        #f0a72a;
+  --warning-subtle: var(--amber-bg-d);
+  --danger:         #f25a4c;
+  --danger-subtle:  var(--red-bg-d);
+
+  --focus-ring: color-mix(in srgb, var(--blue-400) 55%, transparent);
+  --backdrop:   rgba(3, 6, 14, 0.62);
+  --grid-line:  rgba(255, 255, 255, 0.05);
+}

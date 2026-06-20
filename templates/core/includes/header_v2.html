@@ -1,0 +1,78 @@
+{% load static %}
+<!-- Site header — sticky, blurred overlay, theme/lang aware -->
+<header class="hdr">
+    <div class="wrap hdr__row">
+        <a class="hdr__logo" href="{% url 'index' %}" aria-label="Cubevo — home">
+            <img class="logo-light" src="{% static 'img/logos/cubevo-wordmark-blue.svg' %}" alt="Cubevo">
+            <img class="logo-dark" src="{% static 'img/logos/cubevo-wordmark-white.svg' %}" alt="Cubevo">
+        </a>
+
+        <nav class="hdr__nav" aria-label="Main navigation">
+            <a href="{% url 'index' %}#services"><span x-show="language === 'en'">Services</span><span x-show="language === 'ro'">Servicii</span></a>
+            <a href="{% url 'index' %}#ai"><span x-show="language === 'en'">AI Solutions</span><span x-show="language === 'ro'">Soluții AI</span></a>
+            <a href="{% url 'index' %}#work"><span x-show="language === 'en'">Projects</span><span x-show="language === 'ro'">Proiecte</span></a>
+            <a href="{% url 'microservers' %}"><span x-show="language === 'en'">Microservers</span><span x-show="language === 'ro'">Microservere</span></a>
+            <a href="{% url 'digital_signage' %}"><span x-show="language === 'en'">Digital Signage</span><span x-show="language === 'ro'">Semnalistică Digitală</span></a>
+            <a href="{% url 'index' %}#contact"><span x-show="language === 'en'">Contact</span><span x-show="language === 'ro'">Contact</span></a>
+        </nav>
+
+        <div class="hdr__spacer"></div>
+
+        <div class="hdr__actions">
+            <div class="langtoggle" role="group" aria-label="Language">
+                <button type="button" :aria-pressed="language === 'en'" @click="language = 'en'">EN</button>
+                <button type="button" :aria-pressed="language === 'ro'" @click="language = 'ro'">RO</button>
+            </div>
+
+            <button type="button" class="cv-themetoggle" role="switch"
+                :aria-checked="theme === 'dark'" aria-label="Toggle dark mode"
+                @click="theme = theme === 'dark' ? 'light' : 'dark'">
+                <span class="cv-themetoggle__knob">
+                    <span class="cv-themetoggle__ic cv-ic-sun" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.5 1.5M17.5 17.5 19 19M19 5l-1.5 1.5M6.5 17.5 5 19"/></svg>
+                    </span>
+                    <span class="cv-themetoggle__ic cv-ic-moon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+                    </span>
+                </span>
+            </button>
+
+            <span class="hdr__cta">
+                <a class="cv-btn cv-btn--primary cv-btn--sm" href="{% url 'index' %}#contact">
+                    <span class="cv-btn__label"><span x-show="language === 'en'">Start a project</span><span x-show="language === 'ro'">Începe un proiect</span></span>
+                    <span class="cv-btn__icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+                </a>
+            </span>
+
+            <span class="hdr__menu-btn">
+                <button type="button" class="cv-iconbtn cv-iconbtn--outline cv-iconbtn--sm"
+                    @click="menuOpen = !menuOpen"
+                    :aria-label="menuOpen ? 'Close menu' : 'Open menu'" :aria-expanded="menuOpen" aria-controls="hdr-mobile">
+                    <svg x-show="!menuOpen" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+                    <svg x-show="menuOpen" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12"/><path d="M18 6 6 18"/></svg>
+                </button>
+            </span>
+        </div>
+    </div>
+
+    <div id="hdr-mobile" class="hdr__mobile" :class="menuOpen ? 'open' : ''">
+        <div class="hdr__mobile-inner">
+            <a href="{% url 'index' %}#services" @click="menuOpen = false"><span x-show="language === 'en'">Services</span><span x-show="language === 'ro'">Servicii</span></a>
+            <a href="{% url 'index' %}#ai" @click="menuOpen = false"><span x-show="language === 'en'">AI Solutions</span><span x-show="language === 'ro'">Soluții AI</span></a>
+            <a href="{% url 'index' %}#work" @click="menuOpen = false"><span x-show="language === 'en'">Projects</span><span x-show="language === 'ro'">Proiecte</span></a>
+            <a href="{% url 'microservers' %}" @click="menuOpen = false"><span x-show="language === 'en'">Microservers</span><span x-show="language === 'ro'">Microservere</span></a>
+            <a href="{% url 'digital_signage' %}" @click="menuOpen = false"><span x-show="language === 'en'">Digital Signage</span><span x-show="language === 'ro'">Semnalistică Digitală</span></a>
+            <a href="{% url 'index' %}#contact" @click="menuOpen = false"><span x-show="language === 'en'">Contact</span><span x-show="language === 'ro'">Contact</span></a>
+            <div class="m-foot">
+                <div class="langtoggle" role="group" aria-label="Language" style="display:inline-flex">
+                    <button type="button" :aria-pressed="language === 'en'" @click="language = 'en'">EN</button>
+                    <button type="button" :aria-pressed="language === 'ro'" @click="language = 'ro'">RO</button>
+                </div>
+                <a class="cv-btn cv-btn--primary cv-btn--md cv-btn--full" href="{% url 'index' %}#contact" @click="menuOpen = false">
+                    <span class="cv-btn__label"><span x-show="language === 'en'">Start a project</span><span x-show="language === 'ro'">Începe un proiect</span></span>
+                    <span class="cv-btn__icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,443 +1,196 @@
-{% extends "core/base.html" %}
+{% extends "core/base_v2.html" %}
 
 {% block main_content %}
-    <!-- Hero Section -->
-    <section
-        aria-labelledby="hero-title"
-        class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900"
-        role="region"
-        aria-roledescription="Introduction"
-    >
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center relative">
-            <!-- Left content -->
-            <div class="md:w-1/2 mb-8 md:mb-0 z-10">
-                <h1 id="hero-title" class="text-4xl md:text-5xl font-bold mb-4">
-                    <span x-show="language === 'en'">Transforming Ideas into Digital Reality</span>
-                    <span x-show="language === 'ro'">Transformăm Ideile în Realitate Digitală</span>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+        <div class="hero__grid-bg"></div>
+        <div class="hero__glow"></div>
+        <div class="wrap hero__inner">
+            <div class="hero__copy">
+                <span class="eyebrow">{% include "core/includes/icon.html" with name="cube" size=14 %} Software · AI · Cloud</span>
+                <h1>
+                    <span x-show="language === 'en'">Turn ideas into <span class="accent">digital reality</span> that ships.</span>
+                    <span x-show="language === 'ro'">Transformăm ideile în <span class="accent">realitate digitală</span> care funcționează.</span>
                 </h1>
-                <p class="text-xl mb-8 text-gray-700 dark:text-gray-300">
-                    <span x-show="language === 'en'">We craft innovative software solutions tailored to your business needs.</span>
-                    <span x-show="language === 'ro'">Creăm soluții software inovatoare adaptate nevoilor afacerii tale.</span>
+                <p class="hero__lead">
+                    <span x-show="language === 'en'">We craft custom software, AI and infrastructure that fit your business — clean, reliable, and built to scale.</span>
+                    <span x-show="language === 'ro'">Creăm software personalizat, AI și infrastructură adaptate afacerii tale — curate, fiabile și gata de scalare.</span>
                 </p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a
-                        href="#contact"
-                        class="btn bg-blue-700 hover:bg-blue-800 text-white py-3 px-6 rounded-lg text-center transition-colors duration-200 font-medium focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                        role="button"
-                        aria-label="Contact us to get started"
-                    >
-                        <span x-show="language === 'en'">Get Started</span>
-                        <span x-show="language === 'ro'">Începe Acum</span>
+                <div class="hero__cta">
+                    <a class="cv-btn cv-btn--primary cv-btn--lg" href="#contact">
+                        <span class="cv-btn__label"><span x-show="language === 'en'">Start a project</span><span x-show="language === 'ro'">Începe un proiect</span></span>
+                        <span class="cv-btn__icon">{% include "core/includes/icon.html" with name="arrowRight" size=18 %}</span>
                     </a>
-                    <a
-                        href="#services"
-                        class="btn border-2 border-blue-700 text-blue-700 dark:text-blue-300 dark:border-blue-300 hover:bg-blue-50 dark:hover:bg-gray-800 py-3 px-6 rounded-lg text-center transition-colors duration-200"
-                        role="button"
-                        aria-label="View our services"
-                    >
-                        <span x-show="language === 'en'">Our Services</span>
-                        <span x-show="language === 'ro'">Serviciile Noastre</span>
+                    <a class="cv-btn cv-btn--secondary cv-btn--lg" href="#services">
+                        <span class="cv-btn__label"><span x-show="language === 'en'">Our services</span><span x-show="language === 'ro'">Serviciile noastre</span></span>
                     </a>
                 </div>
+                {% comment %}
+                <div class="hero__trust">
+                    <div>
+                        <div class="num">120+</div>
+                        <div class="cap"><span x-show="language === 'en'">Projects delivered</span><span x-show="language === 'ro'">Proiecte livrate</span></div>
+                    </div>
+                    <div>
+                        <div class="num">2019</div>
+                        <div class="cap"><span x-show="language === 'en'">Building since</span><span x-show="language === 'ro'">Construim din</span></div>
+                    </div>
+                    <div>
+                        <div class="num">24/7</div>
+                        <div class="cap"><span x-show="language === 'en'">Support &amp; monitoring</span><span x-show="language === 'ro'">Suport &amp; monitorizare</span></div>
+                    </div>
+                </div>
+                {% endcomment %}
             </div>
 
-            <!-- Hero section -->
-            <div class="w-full md:w-1/2 flex justify-center items-center min-h-[300px] relative">
-                <div class="cube-container">
-                    <div class="cube">
-                        <div class="face front"></div>
-                        <div class="face back"></div>
-                        <div class="face left"></div>
-                        <div class="face right"></div>
-                        <div class="face top"></div>
-                        <div class="face bottom"></div>
+            <div class="preview" aria-hidden="true">
+                <div class="preview__bar">
+                    <span class="preview__dot"></span><span class="preview__dot"></span><span class="preview__dot"></span>
+                    <span class="preview__tab">cubevo · assistant.py</span>
+                </div>
+                <div class="preview__body">
+                    <pre class="codeblock"><span class="c"># answer from your own data</span>
+<span class="k">from</span> anthropic <span class="k">import</span> Anthropic
+
+reply = Anthropic().messages.<span class="k">create</span>(
+  model=<span class="s">"claude-opus-4-8"</span>,
+  tools=[search_docs, create_ticket],
+  messages=[{<span class="s">"role"</span>: <span class="s">"user"</span>, <span class="s">"content"</span>: question}],
+)</pre>
+                    <div class="preview__row">
+                        <div class="mini">
+                            <div class="lbl">Uptime</div>
+                            <div class="val">99.98%</div>
+                        </div>
+                        <div class="mini">
+                            <div class="lbl">Requests / s</div>
+                            <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section
-        aria-labelledby="services-title"
-        id="services"
-        class="py-16 bg-white dark:bg-gray-900"
-        role="region"
-        aria-roledescription="Our Services"
-    >
-        <div class="container mx-auto px-4">
-            <h2 id="services-title" class="text-3xl font-bold text-center mb-12">
-                <span x-show="language === 'en'">What We Do</span>
-                <span x-show="language === 'ro'">Ce Facem</span>
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Custom Software Development -->
-                <article class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <div class="mb-6 text-center"> <!-- Increased margin-bottom and centered -->
-                        <i class="fas fa-code text-5xl bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent transform hover:scale-110 transition-transform"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">
-                        <span x-show="language === 'en'">Custom Software Development</span>
-                        <span x-show="language === 'ro'">Dezvoltare Software Personalizat</span>
-                    </h3>
-                    <p class="text-gray-700 dark:text-gray-300">
-                        <span x-show="language === 'en'">Bespoke software solutions designed to address your unique business challenges and objectives.</span>
-                        <span x-show="language === 'ro'">Soluții software personalizate, concepute pentru a răspunde provocărilor și obiectivelor unice ale afacerii tale.</span>
-                    </p>
-                </article>
-
-                <!-- Web Development -->
-                <article class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <div class="mb-6 text-center">
-                        <i class="fas fa-globe text-5xl bg-gradient-to-r from-green-400 to-teal-500 bg-clip-text text-transparent transform hover:scale-110 transition-transform"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">
-                        <span x-show="language === 'en'">Web Development</span>
-                        <span x-show="language === 'ro'">Dezvoltare Web</span>
-                    </h3>
-                    <p class="text-gray-700 dark:text-gray-300">
-                        <span x-show="language === 'en'">Professional websites built with WordPress, Jekyll, or custom solutions to establish your online presence.</span>
-                        <span x-show="language === 'ro'">Site-uri web profesionale construite cu WordPress, Jekyll sau soluții personalizate pentru a-ți face remarcată prezența online.</span>
-                    </p>
-                </article>
-
-                <!-- IT Consulting -->
-                <article class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <div class="mb-6 text-center">
-                        <i class="fas fa-lightbulb text-5xl bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent transform hover:scale-110 transition-transform"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">
-                        <span x-show="language === 'en'">IT Consulting</span>
-                        <span x-show="language === 'ro'">Consultanță IT</span>
-                    </h3>
-                    <p class="text-gray-700 dark:text-gray-300">
-                        <span x-show="language === 'en'">Expert guidance on technology strategy, digital transformation, and IT optimization.</span>
-                        <span x-show="language === 'ro'">Îndrumare de specialitate privind strategia tehnologică, transformarea digitală și optimizarea IT.</span>
-                    </p>
-                </article>
-
-                <!-- Infrastructure Services -->
-                <article class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <div class="mb-6 text-center">
-                        <i class="fas fa-database text-5xl bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent transform hover:scale-110 transition-transform"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">
-                        <span x-show="language === 'en'">Infrastructure Solutions</span>
-                        <span x-show="language === 'ro'">Soluții de Infrastructură</span>
-                    </h3>
-                    <p class="text-gray-700 dark:text-gray-300">
-                        <span x-show="language === 'en'">Design, deployment, and maintenance of on-premise or cloud infrastructure, databases, and networks.</span>
-                        <span x-show="language === 'ro'">Proiectare, implementare și întreținere a infrastructurii on-premise sau în cloud, baze de date și rețele.</span>
-                    </p>
-                </article>
-
-                <!-- Software Integration -->
-                <article class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <div class="mb-6 text-center">
-                        <i class="fas fa-puzzle-piece text-5xl bg-gradient-to-r from-red-400 to-rose-500 bg-clip-text text-transparent transform hover:scale-110 transition-transform"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">
-                        <span x-show="language === 'en'">Business Software Integration</span>
-                        <span x-show="language === 'ro'">Integrare Software pentru Companii</span>
-                    </h3>
-                    <p class="text-gray-700 dark:text-gray-300">
-                        <span x-show="language === 'en'">Seamless deployment and integration of open-source solutions including CRMs, ERPs, and collaboration suites.</span>
-                        <span x-show="language === 'ro'">Implementare și integrare perfectă a soluțiilor open-source, inclusiv CRM-uri, ERP-uri și suite de colaborare.</span>
-                    </p>
-                </article>
-
-                <!-- Hosting and Maintenance -->
-                <article class="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <div class="mb-6 text-center">
-                        <i class="fas fa-server text-5xl bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent transform hover:scale-110 transition-transform"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">
-                        <span x-show="language === 'en'">Hosting & Maintenance</span>
-                        <span x-show="language === 'ro'">Găzduire & Mentenanță</span>
-                    </h3>
-                    <p class="text-gray-700 dark:text-gray-300">
-                        <span x-show="language === 'en'">Professional web hosting, regular maintenance, and monitoring to keep your digital presence running smoothly.</span>
-                        <span x-show="language === 'ro'">Găzduire web profesională, mentenanță regulată, și monitorizare pentru a menține prezența dvs. digitală funcțională.</span>
-                    </p>
-                </article>
+    <!-- ============ SERVICES ============ -->
+    <section class="section" id="services">
+        <div class="wrap">
+            <div class="section__head">
+                <span class="eyebrow">{% include "core/includes/icon.html" with name="layers" size=14 %} <span x-show="language === 'en'">What we do</span><span x-show="language === 'ro'">Ce facem</span></span>
+                <h2>
+                    <span x-show="language === 'en'">Everything you need to build and run software</span>
+                    <span x-show="language === 'ro'">Tot ce îți trebuie ca să construiești și să rulezi software</span>
+                </h2>
+                <p>
+                    <span x-show="language === 'en'">From a first idea to production and beyond — one partner across the whole stack.</span>
+                    <span x-show="language === 'ro'">De la prima idee până în producție și dincolo de ea — un singur partener pe tot stack-ul.</span>
+                </p>
+            </div>
+            <div class="grid-3">
+                {% include "core/includes/_service_card.html" with icon="code" en_title="Custom Software" ro_title="Software Personalizat" en_desc="Bespoke solutions designed around your unique business challenges and goals." ro_desc="Soluții create în jurul provocărilor și obiectivelor unice ale afacerii tale." %}
+                {% include "core/includes/_service_card.html" with icon="globe" en_title="Web Development" ro_title="Dezvoltare Web" en_desc="Fast, accessible sites with WordPress, Jekyll or fully custom builds." ro_desc="Site-uri rapide și accesibile cu WordPress, Jekyll sau soluții custom." %}
+                {% include "core/includes/_service_card.html" with icon="shield" en_title="IT Consulting" ro_title="Consultanță IT" en_desc="Expert guidance on strategy, digital transformation and IT optimisation." ro_desc="Îndrumare pe strategie, transformare digitală și optimizare IT." %}
+                {% include "core/includes/_service_card.html" with icon="server" en_title="Infrastructure" ro_title="Infrastructură" en_desc="Design and run on-prem or cloud infrastructure, databases and networks." ro_desc="Proiectăm și întreținem infrastructură on-prem sau cloud, baze de date și rețele." %}
+                {% include "core/includes/_service_card.html" with icon="plug" en_title="Software Integration" ro_title="Integrare Software" en_desc="Deploy and connect open-source CRMs, ERPs and collaboration suites." ro_desc="Implementăm și conectăm CRM-uri, ERP-uri și suite de colaborare open-source." %}
+                {% include "core/includes/_service_card.html" with icon="wrench" en_title="Hosting & Maintenance" ro_title="Găzduire & Mentenanță" en_desc="Reliable hosting, monitoring and maintenance to keep you running smoothly." ro_desc="Găzduire fiabilă, monitorizare și mentenanță ca totul să meargă lin." %}
             </div>
         </div>
     </section>
 
-    <!-- AI Solutions Section -->
-    <section
-        aria-labelledby="ai-solutions-title"
-        id="ai-solutions"
-        class="py-16 bg-gradient-to-br from-indigo-50 dark:from-gray-800 dark:to-gray-900"
-        role="region"
-        aria-roledescription="AI Solutions"
-    >
-        <div class="container mx-auto px-4">
-            <h2 id="ai-solutions-title" class="text-3xl font-bold text-center mb-6">
-                <span x-show="language === 'en'">AI-Powered Solutions</span>
-                <span x-show="language === 'ro'">Soluții Bazate pe Inteligență Artificială</span>
-            </h2>
-
-            <!-- Updated subtitle with better dark mode contrast -->
-            <p class="text-center text-gray-700 dark:text-gray-200 max-w-3xl mx-auto mb-12">
-                <span x-show="language === 'en'">Harness the power of artificial intelligence to transform your business processes and customer experiences.</span>
-                <span x-show="language === 'ro'">Valorificați puterea inteligenței artificiale pentru a transforma procesele de afaceri și experiențele clienților.</span>
-            </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Text-based Chatbots -->
-                <article class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <div class="h-3 bg-gradient-to-r from-blue-500 to-indigo-600"></div>
-                    <div class="p-8">
-                        <div class="mb-6 text-center">
-                            <i class="fas fa-comment-dots text-5xl bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-4 text-center">
-                            <span x-show="language === 'en'">Intelligent Chatbots</span>
-                            <span x-show="language === 'ro'">Chatboți Inteligenți</span>
-                        </h3>
-                        <p class="text-gray-700 dark:text-gray-300">
-                            <span x-show="language === 'en'">Custom AI chatbots that understand natural language and provide personalized assistance to your customers 24/7.</span>
-                            <span x-show="language === 'ro'">Chatboți AI personalizați care înțeleg limbajul natural și oferă asistență personalizată clienților dvs. 24/7.</span>
-                        </p>
-                    </div>
-                </article>
-
-                <!-- Voice-enabled AI Assistants -->
-                <article class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <div class="h-3 bg-gradient-to-r from-indigo-500 to-purple-600"></div>
-                    <div class="p-8">
-                        <div class="mb-6 text-center">
-                            <i class="fas fa-microphone-alt text-5xl bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-4 text-center">
-                            <span x-show="language === 'en'">Voice-Enabled Assistants</span>
-                            <span x-show="language === 'ro'">Asistenți Vocali</span>
-                        </h3>
-                        <p class="text-gray-700 dark:text-gray-300">
-                            <span x-show="language === 'en'">Sophisticated voice-enabled AI solutions that transform how users interact with your applications through natural, conversational interfaces.</span>
-                            <span x-show="language === 'ro'">Soluții AI cu voce, care transformă modul în care utilizatorii interacționează cu aplicațiile dvs. prin interfețe conversaționale naturale.</span>
-                        </p>
-                    </div>
-                </article>
-
-                <!-- Data Analysis & Insights -->
-                <article class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
-                    <div class="h-3 bg-gradient-to-r from-purple-500 to-pink-600"></div>
-                    <div class="p-8">
-                        <div class="mb-6 text-center">
-                            <i class="fas fa-brain text-5xl bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-4 text-center">
-                            <span x-show="language === 'en'">Predictive Analytics</span>
-                            <span x-show="language === 'ro'">Analiză Predictivă</span>
-                        </h3>
-                        <p class="text-gray-700 dark:text-gray-300">
-                            <span x-show="language === 'en'">AI-powered data analysis tools that uncover patterns, predict trends, and deliver actionable insights to drive informed business decisions.</span>
-                            <span x-show="language === 'ro'">Instrumente de analiză a datelor bazate pe AI care descoperă tipare, prezic tendințe și oferă informații acționabile pentru a susține decizii de afaceri informate.</span>
-                        </p>
-                    </div>
-                </article>
+    <!-- ============ AI BAND ============ -->
+    <section class="section band" id="ai">
+        <div class="wrap">
+            <div class="section__head">
+                <span class="eyebrow" style="color: var(--accent-text)">{% include "core/includes/icon.html" with name="sparkles" size=14 %} <span x-show="language === 'en'">AI-powered</span><span x-show="language === 'ro'">Bazat pe AI</span></span>
+                <h2>
+                    <span x-show="language === 'en'">Put artificial intelligence to work</span>
+                    <span x-show="language === 'ro'">Pune inteligența artificială la treabă</span>
+                </h2>
+                <p>
+                    <span x-show="language === 'en'">Practical AI that transforms how you serve customers and make decisions.</span>
+                    <span x-show="language === 'ro'">AI practic care schimbă modul în care îți servești clienții și iei decizii.</span>
+                </p>
             </div>
-
-            <div class="mt-12 text-center">
-                <a href="#contact" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg">
-                    <span x-show="language === 'en'">Explore AI Solutions</span>
-                    <span x-show="language === 'ro'">Explorează Soluțiile AI</span>
+            <div class="grid-3">
+                <div class="cv-card cv-card--elevated cv-card--pad-lg cv-card--interactive">
+                    <div class="feature">
+                        <div class="feature__ico ai-ico">{% include "core/includes/icon.html" with name="bot" size=24 %}</div>
+                        <h3><span x-show="language === 'en'">Intelligent Chatbots</span><span x-show="language === 'ro'">Chatboți Inteligenți</span></h3>
+                        <p><span x-show="language === 'en'">Assistants that understand natural language and help customers 24/7.</span><span x-show="language === 'ro'">Asistenți care înțeleg limbajul natural și ajută clienții 24/7.</span></p>
+                        <span class="cv-badge cv-badge--accent cv-badge--md"><span class="cv-badge__dot"></span>RAG</span>
+                    </div>
+                </div>
+                <div class="cv-card cv-card--elevated cv-card--pad-lg cv-card--interactive">
+                    <div class="feature">
+                        <div class="feature__ico ai-ico">{% include "core/includes/icon.html" with name="mic" size=24 %}</div>
+                        <h3><span x-show="language === 'en'">Voice Assistants</span><span x-show="language === 'ro'">Asistenți Vocali</span></h3>
+                        <p><span x-show="language === 'en'">Conversational voice interfaces for natural, hands-free interaction.</span><span x-show="language === 'ro'">Interfețe vocale conversaționale pentru interacțiune naturală.</span></p>
+                        <span class="cv-badge cv-badge--accent cv-badge--md"><span class="cv-badge__dot"></span><span x-show="language === 'en'">Voice</span><span x-show="language === 'ro'">Voce</span></span>
+                    </div>
+                </div>
+                <div class="cv-card cv-card--elevated cv-card--pad-lg cv-card--interactive">
+                    <div class="feature">
+                        <div class="feature__ico ai-ico">{% include "core/includes/icon.html" with name="chart" size=24 %}</div>
+                        <h3><span x-show="language === 'en'">Predictive Analytics</span><span x-show="language === 'ro'">Analiză Predictivă</span></h3>
+                        <p><span x-show="language === 'en'">Uncover patterns and forecast trends to drive informed decisions.</span><span x-show="language === 'ro'">Descoperă tipare și anticipează tendințe pentru decizii informate.</span></p>
+                        <span class="cv-badge cv-badge--accent cv-badge--md"><span class="cv-badge__dot"></span>ML</span>
+                    </div>
+                </div>
+            </div>
+            {% comment %}
+            <div style="margin-top: var(--space-10)">
+                <a class="cv-btn cv-btn--accent cv-btn--lg" href="#contact">
+                    <span class="cv-btn__label"><span x-show="language === 'en'">Explore AI solutions</span><span x-show="language === 'ro'">Explorează soluțiile AI</span></span>
+                    <span class="cv-btn__icon">{% include "core/includes/icon.html" with name="arrowRight" size=18 %}</span>
                 </a>
             </div>
         </div>
+        {% endcomment %}
     </section>
 
-
-    <!-- Projects Section -->
-    <section
-        aria-labelledby="portfolio-title"
-        id="portfolio"
-        class="py-16 bg-gray-50 dark:bg-gray-800"
-        role="region"
-        aria-roledescription="Project Portfolio"
-    >
-        <div class="container mx-auto px-4">
-            <h2 id="portfolio-title" class="text-3xl font-bold text-center mb-12">
-                <span x-show="language === 'en'">Our Work</span>
-                <span x-show="language === 'ro'">Proiectele Noastre</span>
-            </h2>
-
-            <p class="text-center text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-12">
-                <span x-show="language === 'en'">We've developed innovative solutions across various industries. Here's a glimpse of our expertise.</span>
-                <span x-show="language === 'ro'">Am dezvoltat soluții inovatoare în diverse industrii. Iată o privire asupra expertizei noastre.</span>
-            </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- E-commerce Suite -->
-                <article
-                    class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                    role="article"
-                    aria-labelledby="article-title-1"
-                >
-                    <div class="h-48 bg-gradient-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
-                        <i class="fas fa-shopping-cart text-5xl text-white"></i>
+    <!-- ============ WORK ============ -->
+    <section class="section" id="work" x-data="{ workFilter: 'all' }">
+        <div class="wrap">
+            <div class="work__head">
+                <div class="section__head" style="margin: 0">
+                    <span class="eyebrow">{% include "core/includes/icon.html" with name="star" size=14 %} <span x-show="language === 'en'">Our work</span><span x-show="language === 'ro'">Proiectele noastre</span></span>
+                    <h2><span x-show="language === 'en'">A glimpse of what we have shipped</span><span x-show="language === 'ro'">O privire asupra a ce am livrat</span></h2>
+                    <p><span x-show="language === 'en'">Innovative solutions across industries, platforms and stacks.</span><span x-show="language === 'ro'">Soluții inovatoare în diverse industrii, platforme și tehnologii.</span></p>
+                </div>
+                <div class="cv-tabs cv-tabs--pill">
+                    <div class="cv-tabs__list" role="tablist">
+                        <button type="button" role="tab" class="cv-tab" :aria-selected="workFilter === 'all'" @click="workFilter = 'all'"><span x-show="language === 'en'">All</span><span x-show="language === 'ro'">Toate</span></button>
+                        <button type="button" role="tab" class="cv-tab" :aria-selected="workFilter === 'web'" @click="workFilter = 'web'">Web</button>
+                        <button type="button" role="tab" class="cv-tab" :aria-selected="workFilter === 'ai'" @click="workFilter = 'ai'">AI</button>
+                        <button type="button" role="tab" class="cv-tab" :aria-selected="workFilter === 'cloud'" @click="workFilter = 'cloud'">Cloud</button>
+                        <button type="button" role="tab" class="cv-tab" :aria-selected="workFilter === 'software'" @click="workFilter = 'software'"><span x-show="language === 'en'">Apps</span><span x-show="language === 'ro'">Aplicații</span></button>
                     </div>
-                    <div class="p-6">
-                        <h3 id="article-title-1" class="text-xl font-semibold mb-2">
-                            <span x-show="language === 'en'">Custom E-commerce Suite</span>
-                            <span x-show="language === 'ro'">Suită E-commerce Personalizată</span>
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-400">
-                            <span x-show="language === 'en'">Advanced online platform with integrated payment processing for niche services providers.</span>
-                            <span x-show="language === 'ro'">Platformă avansată cu procesare integrată a plăților pentru furnzori de servicii nișate.</span>
-                        </p>
-                    </div>
-                </article>
-
-                <!-- WordPress Websites -->
-                <article
-                    class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                    role="article"
-                    aria-labelledby="article-title-2"
-                >
-                    <div class="h-48 bg-gradient-to-r from-green-400 to-teal-500 flex items-center justify-center">
-                        <i class="fab fa-wordpress text-5xl text-white"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 id="article-title-2" class="text-xl font-semibold mb-2">
-                            <span x-show="language === 'en'">WordPress Websites</span>
-                            <span x-show="language === 'ro'">Site-uri WordPress</span>
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-400">
-                            <span x-show="language === 'en'">Custom-designed WordPress solutions with optimized performance and SEO.</span>
-                            <span x-show="language === 'ro'">Soluții WordPress personalizate cu performanță optimizata și SEO.</span>
-                        </p>
-                    </div>
-                </article>
-
-                <!-- Documentation Chatbot -->
-                <article
-                    class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                    role="article"
-                    aria-labelledby="article-title-3"
-                >
-                    <div class="h-48 bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center">
-                        <i class="fas fa-robot text-5xl text-white"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 id="article-title-3" class="text-xl font-semibold mb-2">
-                            <span x-show="language === 'en'">Documentation Chatbot</span>
-                            <span x-show="language === 'ro'">Chatbot pentru Documentație</span>
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-400">
-                            <span x-show="language === 'en'">AI-powered assistant that helps users navigate complex documentation.</span>
-                            <span x-show="language === 'ro'">Asistent bazat pe inteligență artificială care ajută utilizatorii să navigheze prin documentație complexă.</span>
-                        </p>
-                    </div>
-                </article>
-
-                <!-- Contract Management App -->
-                <article
-                    class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                    role="article"
-                    aria-labelledby="article-title-4"
-                >
-                    <div class="h-48 bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center">
-                        <i class="fas fa-file-contract text-5xl text-white"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 id="article-title-4" class="text-xl font-semibold mb-2">
-                            <span x-show="language === 'en'">Contract Management App</span>
-                            <span x-show="language === 'ro'">Aplicație de Gestionare a Contractelor</span>
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-400">
-                            <span x-show="language === 'en'">Streamlined contract lifecycle management with automated workflows and alerts.</span>
-                            <span x-show="language === 'ro'">Gestionare simplificată a ciclului de viață al contractelor cu fluxuri de lucru și alerte automate.</span>
-                        </p>
-                    </div>
-                </article>
-
-                <!-- Self-hosted Cloud Suite -->
-                <article
-                    class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                    role="article"
-                    aria-labelledby="article-title-5"
-                >
-                    <div class="h-48 bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center">
-                        <i class="fas fa-cloud text-5xl text-white"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 id="article-title-5" class="text-xl font-semibold mb-2">
-                            <span x-show="language === 'en'">Self-hosted Cloud Suite</span>
-                            <span x-show="language === 'ro'">Suită Cloud Self-hosted</span>
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-400">
-                            <span x-show="language === 'en'">Secure, private cloud infrastructure with file sharing and collaboration tools.</span>
-                            <span x-show="language === 'ro'">Infrastructură cloud securizată și privată cu instrumente de partajare a fișierelor și colaborare.</span>
-                        </p>
-                    </div>
-                </article>
-
-                <!-- NFC Business Card Suite -->
-                <article
-                    class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                    role="article"
-                    aria-labelledby="article-title-6"
-                >
-                    <div class="h-48 bg-gradient-to-r from-red-400 to-rose-500 flex items-center justify-center">
-                        <i class="fas fa-id-card text-5xl text-white"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 id="article-title-6" class="text-xl font-semibold mb-2">
-                            <span x-show="language === 'en'">NFC Business Card Suite</span>
-                            <span x-show="language === 'ro'">Suită de Cărți de Vizită NFC</span>
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-400">
-                            <span x-show="language === 'en'">Digital business cards with NFC technology for instant contact sharing.</span>
-                            <span x-show="language === 'ro'">Cărți de vizită digitale cu tehnologie NFC pentru partajarea instantanee a contactelor.</span>
-                        </p>
-                    </div>
-                </article>
+                </div>
             </div>
-
-            <div class="mt-12 text-center">
-                <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-lg transition-colors duration-200">
-                    <span x-show="language === 'en'">Discuss Your Project</span>
-                    <span x-show="language === 'ro'">Discută Proiectul Tău</span>
-                </a>
+            <div class="work__grid">
+                {% include "core/includes/_project_card.html" with cat="web" icon="globe" tag="E-commerce" en_title="Custom E-commerce Suite" ro_title="Suită E-commerce" en_desc="Online platform with integrated payments for niche service providers." ro_desc="Platformă online cu procesare de plăți pentru furnizori de servicii nișate." %}
+                {% include "core/includes/_project_card.html" with cat="ai" icon="bot" tag="AI" en_title="Documentation Chatbot" ro_title="Chatbot Documentație" en_desc="AI assistant that helps users navigate complex documentation." ro_desc="Asistent AI care ajută utilizatorii să navigheze documentație complexă." %}
+                {% include "core/includes/_project_card.html" with cat="cloud" icon="cloud" tag="Cloud" en_title="Self-hosted Cloud Suite" ro_title="Suită Cloud Self-hosted" en_desc="Secure private cloud with file sharing and collaboration tools." ro_desc="Cloud privat securizat cu partajare de fișiere și colaborare." %}
+                {% include "core/includes/_project_card.html" with cat="software" icon="layers" tag="App" en_title="Contract Management App" ro_title="Gestionare Contracte" en_desc="Streamlined contract lifecycle with automated workflows and alerts." ro_desc="Ciclu de viață al contractelor cu fluxuri și alerte automate." %}
+                {% include "core/includes/_project_card.html" with cat="web" icon="globe" tag="WordPress" en_title="WordPress Websites" ro_title="Site-uri WordPress" en_desc="Custom WordPress builds with optimised performance and SEO." ro_desc="Build-uri WordPress custom cu performanță și SEO optimizate." %}
+                {% include "core/includes/_project_card.html" with cat="software" icon="zap" tag="NFC" en_title="NFC Business Cards" ro_title="Cărți de Vizită NFC" en_desc="Digital business cards with NFC for instant contact sharing." ro_desc="Cărți de vizită digitale cu NFC pentru partajare instant." %}
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section
-        aria-labelledby="contact-title"
-        id="contact"
-        class="py-16 bg-white dark:bg-gray-900"
-        role="region"
-        aria-roledescription="Contact Information"
-    >
-        <div class="container mx-auto px-4">
-            <h2 id="contact-title" class="text-3xl font-bold text-center mb-12">
-                <span x-show="language === 'en'">Get in Touch</span>
-                <span x-show="language === 'ro'">Contactează-ne</span>
-            </h2>
-
-            <div class="max-w-3xl mx-auto bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-                <div class="p-10 text-center">
-                    <div class="text-blue-600 dark:text-blue-400 mb-6">
-                        <i class="fas fa-paper-plane text-5xl"></i>
-                    </div>
-
-                    <p class="text-xl mb-6 text-gray-700 dark:text-gray-300">
-                        <span x-show="language === 'en'">We don't believe in complicated contact forms. Just shoot us an email and we'll respond faster than you can say "software development"!</span>
-                        <span x-show="language === 'ro'">Nu credem în formulare de contact complicate. Trimite-ne un email și vom răspunde mai repede decât poți spune "dezvoltare software"!</span>
-                    </p>
-
-                    <a href="mailto:contact@cubevodata.com"
-                       class="text-2xl font-semibold text-blue-700 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400 rounded-sm"
-                       aria-label="Send us an email">
-                        contact@cubevodata.com
-                    </a>
-
+    <!-- ============ CONTACT BAND ============ -->
+    <section class="section contact" id="contact">
+        <div class="wrap">
+            <div class="contact__card">
+                <div class="grid-bg"></div>
+                <h2><span x-show="language === 'en'">Get in touch</span><span x-show="language === 'ro'">Contactează-ne</span></h2>
+                <p>
+                    <span x-show="language === 'en'">We don’t believe in complicated contact forms. Just send us an email and we’ll respond faster than you can say “software development”.</span>
+                    <span x-show="language === 'ro'">Nu credem în formulare complicate. Trimite-ne un email și răspundem mai repede decât poți spune „dezvoltare software”.</span>
+                </p>
+                <a class="contact__email" href="mailto:contact@cubevodata.com">
+                    {% include "core/includes/icon.html" with name="mail" size=20 %} contact@cubevodata.com
+                </a>
             </div>
         </div>
     </section>

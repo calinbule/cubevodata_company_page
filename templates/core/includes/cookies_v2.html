@@ -1,0 +1,24 @@
+<!-- Cookie consent banner -->
+<div
+    x-data="{ showCookieConsent: !localStorage.getItem('cookieConsent') }"
+    x-show="showCookieConsent"
+    x-cloak
+    class="cookie-banner"
+    role="alert"
+    aria-live="polite"
+    aria-label="Cookie consent notice"
+>
+    <div class="cookie-banner__inner">
+        <p>
+            <span x-show="language === 'en'">We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</span>
+            <span x-show="language === 'ro'">Folosim cookie-uri pentru a îmbunătăți experiența dvs. Continuând să vizitați acest site, sunteți de acord cu utilizarea cookie-urilor.</span>
+        </p>
+        <button type="button"
+            class="cv-btn cv-btn--primary cv-btn--sm"
+            @click="localStorage.setItem('cookieConsent', 'true'); showCookieConsent = false"
+            aria-label="Accept cookie policy">
+            <span x-show="language === 'en'">Accept</span>
+            <span x-show="language === 'ro'">Accept</span>
+        </button>
+    </div>
+</div>

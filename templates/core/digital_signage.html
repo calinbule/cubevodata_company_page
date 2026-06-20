@@ -1,232 +1,127 @@
-{% extends "core/base.html" %}
+{% extends "core/base_v2.html" %}
 {% load static %}
 
+{% block title %}Digital Signage (DSig) | Cubevo Data Concept{% endblock %}
+
 {% block main_content %}
-    <!-- Hero Section -->
-    <section class="pt-32 pb-16 bg-white dark:bg-gray-900 transition-colors duration-200"
-        aria-labelledby="digital-signage-title"
-        aria-roledescription="Digital Signage Solutions">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <a href="https://dsig.cubevodata.com/"
-                   class="block hover:scale-105 transition-transform duration-200 group">
-                    <h1 id="digital-signage-title" class="text-4xl md:text-6xl font-thin text-blue-700 dark:text-blue-400 mb-6 group-hover:text-blue-800 dark:group-hover:text-blue-300 transition-colors duration-200 underline decoration-2 underline-offset-4">
-                        <span x-show="language === 'en'">Digital Signage Solutions</span>
-                        <span x-show="language === 'ro'">Soluții de semnalistică digitală</span>
-                    </h1>
-                </a>
-                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                    <span x-show="language === 'en'">
-                        DSig is a powerful digital signage management platform that allows you to control and manage multiple devices from one central location.
-                    </span>
-                    <span x-show="language === 'ro'">
-                        DSig este o platformă de gestionare a dispozitivelor de semnalistică digitală care îți permite să controlezi și să gestionezi multiple dispozitive dintr-o singură locație centrală.
-                    </span>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+        <div class="hero__grid-bg"></div>
+        <div class="hero__glow"></div>
+        <div class="wrap hero__inner">
+            <div class="hero__copy">
+                <span class="eyebrow">{% include "core/includes/icon.html" with name="monitor" size=14 %} <span x-show="language === 'en'">DSig platform</span><span x-show="language === 'ro'">Platforma DSig</span></span>
+                <h1>
+                    <span x-show="language === 'en'">Control every screen <span class="accent">from one place.</span></span>
+                    <span x-show="language === 'ro'">Controlează fiecare ecran <span class="accent">dintr-un singur loc.</span></span>
+                </h1>
+                <p class="hero__lead">
+                    <span x-show="language === 'en'">DSig is a digital-signage platform to manage every device from one central dashboard — whether you run 2 screens or 200.</span>
+                    <span x-show="language === 'ro'">DSig este o platformă de semnalistică digitală ce gestionează toate dispozitivele dintr-un panou central — fie că ai 2 ecrane sau 200.</span>
                 </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Core Features Section -->
-    <section class="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-200">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-thin text-gray-800 dark:text-white mb-4">
-                    <span x-show="language === 'en'">Core Features</span>
-                    <span x-show="language === 'ro'">Funcționalități principale</span>
-                </h2>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Secure User Access -->
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                    <div class="text-blue-600 dark:text-blue-400 mb-4">
-                        <i class="fas fa-shield-alt text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-medium text-gray-800 dark:text-white mb-3">
-                        <span x-show="language === 'en'">Secure User Access</span>
-                        <span x-show="language === 'ro'">Acces securizat</span>
-                    </h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        <span x-show="language === 'en'">
-                            Each account has access only to assigned devices. Keep your content organized and secure.
-                        </span>
-                        <span x-show="language === 'ro'">
-                            Fiecare cont are acces doar la dispozitivele asociate. Conținutul este menținut organizat și în siguranță.
-                        </span>
-                    </p>
-                </div>
-
-                <!-- Multiple Display Management -->
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                    <div class="text-blue-600 dark:text-blue-400 mb-4">
-                        <i class="fas fa-desktop text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-medium text-gray-800 dark:text-white mb-3">
-                        <span x-show="language === 'en'">Multiple Device Management</span>
-                        <span x-show="language === 'ro'">Gestionarea mai multor dispozitive</span>
-                    </h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        <span x-show="language === 'en'">
-                            Manage all your digital devices from one dashboard. Whether you have 2 devices or 200, control them all.
-                        </span>
-                        <span x-show="language === 'ro'">
-                            Gestionează toate dispozitivele dintr-un singur panou. Fie că ai 2 dispozitive sau 200, controlează-le pe toate.
-                        </span>
-                    </p>
-                </div>
-
-                <!-- Remote Control -->
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                    <div class="text-blue-600 dark:text-blue-400 mb-4">
-                        <i class="fas fa-wifi text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-medium text-gray-800 dark:text-white mb-3">
-                        <span x-show="language === 'en'">Remote Control</span>
-                        <span x-show="language === 'ro'">Control la distanță</span>
-                    </h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        <span x-show="language === 'en'">
-                            Restart or shut down devices remotely without visiting each location. Makes troubleshooting easier.
-                        </span>
-                        <span x-show="language === 'ro'">
-                            Repornește sau închide dispozitivele la distanță fără să vizitezi fiecare locație. Perfect pentru depanare fără probleme.
-                        </span>
-                    </p>
-                </div>
-
-                <!-- Content Management -->
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                    <div class="text-blue-600 dark:text-blue-400 mb-4">
-                        <i class="fas fa-images text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-medium text-gray-800 dark:text-white mb-3">
-                        <span x-show="language === 'en'">Easy Image Upload</span>
-                        <span x-show="language === 'ro'">Încărcare ușoară a imaginilor</span>
-                    </h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        <span x-show="language === 'en'">
-                            Drag and drop multiple images at once. Instantly preview your content before publishing.
-                        </span>
-                        <span x-show="language === 'ro'">
-                            Drag & drop pentru multiple imagini, simultan. Previzualizare instantanee a conținutului inainte de publicare.
-                        </span>
-                    </p>
-                </div>
-
-                <!-- Slideshow Control -->
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                    <div class="text-blue-600 dark:text-blue-400 mb-4">
-                        <i class="fas fa-play-circle text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-medium text-gray-800 dark:text-white mb-3">
-                        <span x-show="language === 'en'">Slideshow Control</span>
-                        <span x-show="language === 'ro'">Control slideshow</span>
-                    </h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        <span x-show="language === 'en'">
-                            Start, stop, and restart slideshows instantly. Adjust display time and screen orientation.
-                        </span>
-                        <span x-show="language === 'ro'">
-                            Pornește, oprește și repornește slideshow-uri instantaneu. Ajustează timpul de afișare și orientarea.
-                        </span>
-                    </p>
-                </div>
-
-                <!-- Health Monitoring -->
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
-                    <div class="text-blue-600 dark:text-blue-400 mb-4">
-                        <i class="fas fa-heartbeat text-3xl"></i>
-                    </div>
-                    <h3 class="text-xl font-medium text-gray-800 dark:text-white mb-3">
-                        <span x-show="language === 'en'">Health Monitoring</span>
-                        <span x-show="language === 'ro'">Monitorizarea sănătății dispozitivelor</span>
-                    </h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        <span x-show="language === 'en'">
-                            See which devices are online and working properly in real-time.
-                        </span>
-                        <span x-show="language === 'ro'">
-                            Vezi care dispozitive sunt online și funcționează corect în timp real.
-                        </span>
-                    </p>
+                <div class="hero__cta">
+                    <a class="cv-btn cv-btn--primary cv-btn--lg" href="https://dsig.cubevodata.com/">
+                        <span class="cv-btn__label"><span x-show="language === 'en'">Get started</span><span x-show="language === 'ro'">Începe acum</span></span>
+                        <span class="cv-btn__icon">{% include "core/includes/icon.html" with name="arrowRight" size=18 %}</span>
+                    </a>
+                    <a class="cv-btn cv-btn--secondary cv-btn--lg" href="#features">
+                        <span class="cv-btn__icon">{% include "core/includes/icon.html" with name="eye" size=18 %}</span>
+                        <span class="cv-btn__label"><span x-show="language === 'en'">See how it works</span><span x-show="language === 'ro'">Vezi cum funcționează</span></span>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Business Benefits Section -->
-    <section class="py-16 bg-white dark:bg-gray-900 transition-colors duration-200">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-thin text-center text-gray-800 dark:text-white mb-12">
-                    <span x-show="language === 'en'">Business Benefits</span>
-                    <span x-show="language === 'ro'">Beneficii pentru afaceri</span>
-                </h2>
-
-                <div class="grid md:grid-cols-2 gap-12">
-                    <!-- Save Time & Money -->
-                    <div class="text-center">
-                        <div class="text-blue-600 dark:text-blue-400 mb-4">
-                            <i class="fas fa-clock text-4xl"></i>
+            <div class="dash" aria-hidden="true">
+                <div class="dash__bar">
+                    <span class="d"></span><span class="d"></span><span class="d"></span>
+                    <span class="name">dsig · <span x-show="language === 'en'">dashboard</span><span x-show="language === 'ro'">panou</span></span>
+                    <span class="live"><i></i> 5 online</span>
+                </div>
+                <div class="dash__body">
+                    <div class="dash__side">
+                        <a class="active">{% include "core/includes/icon.html" with name="grid" size=16 %} <span x-show="language === 'en'">Devices</span><span x-show="language === 'ro'">Dispozitive</span></a>
+                        <a>{% include "core/includes/icon.html" with name="image" size=16 %} Media</a>
+                        <a>{% include "core/includes/icon.html" with name="monitor" size=16 %} <span x-show="language === 'en'">Slideshows</span><span x-show="language === 'ro'">Slideshow-uri</span></a>
+                        <a>{% include "core/includes/icon.html" with name="signal" size=16 %} <span x-show="language === 'en'">Health</span><span x-show="language === 'ro'">Sănătate</span></a>
+                    </div>
+                    <div class="dash__main">
+                        <h4><span x-show="language === 'en'">Devices · 6</span><span x-show="language === 'ro'">Dispozitive · 6</span></h4>
+                        <div class="dash__devices">
+                            <div class="dvc"><div class="dvc__scr"></div><div class="dvc__meta"><span class="dot on"></span><span class="lbl"><span x-show="language === 'en'">Reception</span><span x-show="language === 'ro'">Recepție</span></span></div></div>
+                            <div class="dvc"><div class="dvc__scr alt2"></div><div class="dvc__meta"><span class="dot on"></span><span class="lbl"><span x-show="language === 'en'">Shop window</span><span x-show="language === 'ro'">Vitrină</span></span></div></div>
+                            <div class="dvc"><div class="dvc__scr alt"></div><div class="dvc__meta"><span class="dot on"></span><span class="lbl"><span x-show="language === 'en'">Cafeteria</span><span x-show="language === 'ro'">Cantină</span></span></div></div>
+                            <div class="dvc"><div class="dvc__scr alt"></div><div class="dvc__meta"><span class="dot off"></span><span class="lbl"><span x-show="language === 'en'">Lobby east</span><span x-show="language === 'ro'">Lobby est</span></span></div></div>
+                            <div class="dvc"><div class="dvc__scr alt2"></div><div class="dvc__meta"><span class="dot on"></span><span class="lbl"><span x-show="language === 'en'">Meeting A</span><span x-show="language === 'ro'">Sală A</span></span></div></div>
+                            <div class="dvc"><div class="dvc__scr"></div><div class="dvc__meta"><span class="dot on"></span><span class="lbl"><span x-show="language === 'en'">Warehouse</span><span x-show="language === 'ro'">Depozit</span></span></div></div>
                         </div>
-                        <h3 class="text-xl font-medium text-gray-800 dark:text-white mb-4">
-                            <span x-show="language === 'en'">Save Time & Money</span>
-                            <span x-show="language === 'ro'">Economisește timp și bani</span>
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-300">
-                            <span x-show="language === 'en'">
-                                No need to visit each location to update content. Update all locations from one place and minimize downtime.
-                            </span>
-                            <span x-show="language === 'ro'">
-                                Nu mai e nevoie să vizitezi fiecare locație pentru a actualiza conținutul. Actualizează toate dispozitivele dintr-un singur loc și minimizează timpul de nefuncționare.
-                            </span>
-                        </p>
-                    </div>
-
-                    <!-- Reliable & Secure -->
-                    <div class="text-center">
-                        <div class="text-blue-600 dark:text-blue-400 mb-4">
-                            <i class="fas fa-lock text-4xl"></i>
-                        </div>
-                        <h3 class="text-xl font-medium text-gray-800 dark:text-white mb-4">
-                            <span x-show="language === 'en'">Reliable & Secure</span>
-                            <span x-show="language === 'ro'">Fiabil și sigur</span>
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-300">
-                            <span x-show="language === 'en'">
-                                Secure connections protect your content and data. Reliable system with minimal maintenance required.
-                            </span>
-                            <span x-show="language === 'ro'">
-                                Conexiunile securizate protejează conținutul și datele. Sistem fiabil cu eforturi de întreținere minimale.
-                            </span>
-                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="py-16 bg-blue-700 dark:bg-blue-800 text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-thin mb-6">
-                <span x-show="language === 'en'">Ready to Upgrade Your Business?</span>
-                <span x-show="language === 'ro'">Ești gata să-ți upgradezi afacerea?</span>
-            </h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">
-                <span x-show="language === 'en'">
-                    Start managing all your digital signage from one place. Increase efficiency, save time, and deliver better customer experiences.
-                </span>
-                <span x-show="language === 'ro'">
-                    Gestionezi toate dispozitivele de semnalistică digitală dintr-un singur loc. Crește eficiența, economisește timp și oferă experiențe mai bune clienților.
-                </span>
-            </p>
-            <a href="https://dsig.cubevodata.com/"
-               class="inline-block bg-white text-blue-700 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200">
-                <span x-show="language === 'en'">Get Started Today</span>
-                <span x-show="language === 'ro'">Începe astăzi</span>
-            </a>
+    <!-- ============ FEATURES ============ -->
+    <section class="section" id="features">
+        <div class="wrap">
+            <div class="section__head">
+                <span class="eyebrow">{% include "core/includes/icon.html" with name="grid" size=14 %} <span x-show="language === 'en'">Core features</span><span x-show="language === 'ro'">Funcționalități</span></span>
+                <h2><span x-show="language === 'en'">Everything you need to run your screens</span><span x-show="language === 'ro'">Tot ce îți trebuie ca să-ți rulezi ecranele</span></h2>
+                <p><span x-show="language === 'en'">Manage content, control devices and keep an eye on health — from any browser.</span><span x-show="language === 'ro'">Gestionează conținut, controlează dispozitive și urmărește sănătatea — din orice browser.</span></p>
+            </div>
+            <div class="grid-3">
+                {% include "core/includes/_feature_card.html" with icon="lock" en_title="Secure User Access" ro_title="Acces Securizat" en_desc="Each account sees only its assigned devices. Content stays organised and safe." ro_desc="Fiecare cont vede doar dispozitivele asociate. Conținutul rămâne organizat și sigur." %}
+                {% include "core/includes/_feature_card.html" with icon="grid" en_title="Multiple Device Management" ro_title="Gestionare Multiplă" en_desc="Run every device from one dashboard — 2 or 200, all in one view." ro_desc="Toate dispozitivele dintr-un singur panou — 2 sau 200, într-o singură vedere." %}
+                {% include "core/includes/_feature_card.html" with icon="power" en_title="Remote Control" ro_title="Control la Distanță" en_desc="Restart or shut devices down remotely. No more driving to each location." ro_desc="Repornire sau oprire la distanță. Fără drumuri la fiecare locație." %}
+                {% include "core/includes/_feature_card.html" with icon="upload" en_title="Easy Image Upload" ro_title="Încărcare Ușoară" en_desc="Drag and drop multiple images at once and preview before you publish." ro_desc="Drag & drop pentru imagini multiple, cu previzualizare înainte de publicare." %}
+                {% include "core/includes/_feature_card.html" with icon="image" en_title="Slideshow Control" ro_title="Control Slideshow" en_desc="Start, stop and restart slideshows instantly. Set timing and orientation." ro_desc="Pornire, oprire și repornire instant. Setează timpul și orientarea." %}
+                {% include "core/includes/_feature_card.html" with icon="signal" en_title="Health Monitoring" ro_title="Monitorizare Sănătate" en_desc="See which devices are online and working properly, in real time." ro_desc="Vezi în timp real care dispozitive sunt online și funcționează corect." %}
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ BENEFITS ============ -->
+    <section class="section band" id="benefits">
+        <div class="wrap">
+            <div class="section__head">
+                <span class="eyebrow">{% include "core/includes/icon.html" with name="zap" size=14 %} <span x-show="language === 'en'">Business benefits</span><span x-show="language === 'ro'">Beneficii</span></span>
+                <h2><span x-show="language === 'en'">Why teams switch to DSig</span><span x-show="language === 'ro'">De ce echipele aleg DSig</span></h2>
+            </div>
+            <div class="benefit-grid">
+                <div class="cv-card cv-card--elevated cv-card--pad-none benefit">
+                    <div class="benefit__ico">{% include "core/includes/icon.html" with name="wallet" size=26 %}</div>
+                    <h3><span x-show="language === 'en'">Save time & money</span><span x-show="language === 'ro'">Economisești timp & bani</span></h3>
+                    <p><span x-show="language === 'en'">No more visiting each location to change content. Update everywhere from one place and minimise downtime.</span><span x-show="language === 'ro'">Fără vizite la fiecare locație. Actualizezi peste tot dintr-un singur loc și minimizezi nefuncționarea.</span></p>
+                    <ul>
+                        <li>{% include "core/includes/icon.html" with name="check" size=16 %} <span x-show="language === 'en'">One place for every location</span><span x-show="language === 'ro'">Un loc pentru toate locațiile</span></li>
+                        <li>{% include "core/includes/icon.html" with name="check" size=16 %} <span x-show="language === 'en'">No site visits to update</span><span x-show="language === 'ro'">Fără deplasări</span></li>
+                        <li>{% include "core/includes/icon.html" with name="check" size=16 %} <span x-show="language === 'en'">Less downtime</span><span x-show="language === 'ro'">Mai puțin downtime</span></li>
+                    </ul>
+                </div>
+                <div class="cv-card cv-card--elevated cv-card--pad-none benefit">
+                    <div class="benefit__ico">{% include "core/includes/icon.html" with name="shield" size=26 %}</div>
+                    <h3><span x-show="language === 'en'">Reliable & secure</span><span x-show="language === 'ro'">Fiabil & sigur</span></h3>
+                    <p><span x-show="language === 'en'">Secure connections protect your content and data, on a system that needs minimal maintenance.</span><span x-show="language === 'ro'">Conexiuni securizate protejează conținutul și datele, pe un sistem cu mentenanță minimă.</span></p>
+                    <ul>
+                        <li>{% include "core/includes/icon.html" with name="check" size=16 %} <span x-show="language === 'en'">Encrypted connections</span><span x-show="language === 'ro'">Conexiuni criptate</span></li>
+                        <li>{% include "core/includes/icon.html" with name="check" size=16 %} <span x-show="language === 'en'">Per-account device access</span><span x-show="language === 'ro'">Acces pe cont</span></li>
+                        <li>{% include "core/includes/icon.html" with name="check" size=16 %} <span x-show="language === 'en'">Minimal maintenance</span><span x-show="language === 'ro'">Mentenanță minimă</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA BAND ============ -->
+    <section class="section contact" id="contact">
+        <div class="wrap">
+            <div class="contact__card">
+                <div class="grid-bg"></div>
+                <h2><span x-show="language === 'en'">Ready to upgrade your business?</span><span x-show="language === 'ro'">Gata să-ți upgradezi afacerea?</span></h2>
+                <p><span x-show="language === 'en'">Manage all your digital signage from one place. Increase efficiency, save time and deliver better customer experiences.</span><span x-show="language === 'ro'">Gestionează toată semnalistica digitală dintr-un singur loc. Crește eficiența, economisește timp și oferă experiențe mai bune.</span></p>
+                <a class="contact__email" href="https://dsig.cubevodata.com/">
+                    {% include "core/includes/icon.html" with name="arrowUpRight" size=20 %} <span x-show="language === 'en'">Get started today</span><span x-show="language === 'ro'">Începe astăzi</span>
+                </a>
+            </div>
         </div>
     </section>
 {% endblock %}

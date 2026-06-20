@@ -1,0 +1,8 @@
+{% comment %} Simple feature card (no link). Params: icon en_title ro_title en_desc ro_desc {% endcomment %}
+<div class="cv-card cv-card--outline cv-card--pad-lg cv-card--interactive">
+    <div class="feature">
+        <div class="feature__ico">{% include "core/includes/icon.html" with name=icon size=24 %}</div>
+        <h3><span x-show="language === 'en'">{{ en_title }}</span><span x-show="language === 'ro'">{{ ro_title }}</span></h3>
+        <p><span x-show="language === 'en'">{{ en_desc }}</span><span x-show="language === 'ro'">{{ ro_desc }}</span></p>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+{% load static %}
+<!-- Site footer -->
+<footer class="ftr">
+    <div class="wrap">
+        <div class="ftr__top">
+            <div class="ftr__brand">
+                <a class="hdr__logo" href="{% url 'index' %}" aria-label="Cubevo — home">
+                    <img class="logo-light" src="{% static 'img/logos/cubevo-wordmark-blue.svg' %}" alt="Cubevo">
+                    <img class="logo-dark" src="{% static 'img/logos/cubevo-wordmark-white.svg' %}" alt="Cubevo">
+                </a>
+                <p>
+                    <span x-show="language === 'en'">Transforming ideas into digital reality since 2019.</span>
+                    <span x-show="language === 'ro'">Transformăm idei în realitate digitală din 2019.</span>
+                </p>
+            </div>
+
+            <div class="ftr__col">
+                <h4><span x-show="language === 'en'">Explore</span><span x-show="language === 'ro'">Explorează</span></h4>
+                <a href="{% url 'index' %}#services"><span x-show="language === 'en'">Services</span><span x-show="language === 'ro'">Servicii</span></a>
+                <a href="{% url 'index' %}#ai"><span x-show="language === 'en'">AI Solutions</span><span x-show="language === 'ro'">Soluții AI</span></a>
+                <a href="{% url 'microservers' %}"><span x-show="language === 'en'">Microservers</span><span x-show="language === 'ro'">Microservere</span></a>
+                <a href="{% url 'digital_signage' %}"><span x-show="language === 'en'">Digital Signage</span><span x-show="language === 'ro'">Semnalistică Digitală</span></a>
+                <a href="{% url 'index' %}#work"><span x-show="language === 'en'">Projects</span><span x-show="language === 'ro'">Proiecte</span></a>
+            </div>
+
+            <div class="ftr__col">
+                <h4><span x-show="language === 'en'">Company</span><span x-show="language === 'ro'">Companie</span></h4>
+                <ul>
+                    <li>CUBEVO</li>
+                    <li>Bule Ileana Persoana Fizica Autorizata</li>
+                    <li>
+                        <span x-show="language === 'en'">Registration No: 53281837</span>
+                        <span x-show="language === 'ro'">CUI: 53281837</span>
+                    </li>
+                    <li>
+                        <span x-show="language === 'en'">Chamber of Commerce No: F2026001624003</span>
+                        <span x-show="language === 'ro'">Nr. Reg. Com.: F2026001624003</span>
+                    </li>
+                    <li>Bulevardul Bucureștii Noi, 136, Parter, Apartament 5, SECTOR 1, BUCURESTI</li>
+                </ul>
+            </div>
+
+            <div class="ftr__col">
+                <h4>Legal</h4>
+                <a href="{% url 'privacy' %}"><span x-show="language === 'en'">Privacy Policy</span><span x-show="language === 'ro'">Politica de Confidențialitate</span></a>
+                <a href="{% url 'cookies' %}"><span x-show="language === 'en'">Cookie Policy</span><span x-show="language === 'ro'">Politica de Cookie-uri</span></a>
+                <a href="{% url 'terms' %}"><span x-show="language === 'en'">Terms of Service</span><span x-show="language === 'ro'">Termeni și Condiții</span></a>
+            </div>
+        </div>
+
+        <div class="ftr__bottom">
+            <span>
+                <span x-show="language === 'en'">© <span x-text="new Date().getFullYear()"></span> Cubevo. All rights reserved.</span>
+                <span x-show="language === 'ro'">© <span x-text="new Date().getFullYear()"></span> Cubevo. Toate drepturile rezervate.</span>
+            </span>
+            <span>info@cubevo.ro · Arad, RO</span>
+        </div>
+    </div>
+</footer>
+
+<button type="button" class="to-top" aria-label="Back to top"
+    @click="window.scrollTo({ top: 0, behavior: 'smooth' })">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</button>

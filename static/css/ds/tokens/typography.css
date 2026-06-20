@@ -1,0 +1,46 @@
+/* Cubevo — Typography tokens
+   ==================================================================
+   Display  : Space Grotesk  — headings, hero, numerals
+   Body / UI: Hanken Grotesk — paragraphs, labels, controls
+   Mono     : JetBrains Mono — code, eyebrows, data, technical tags
+   ================================================================== */
+
+:root {
+  /* ---- Families ---- */
+  --font-display: 'Space Grotesk', 'Hanken Grotesk', system-ui, sans-serif;
+  --font-body:    'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* ---- Type scale (1rem = 16px) ---- */
+  --text-2xs:  0.6875rem;  /* 11 */
+  --text-xs:   0.75rem;    /* 12 */
+  --text-sm:   0.875rem;   /* 14 */
+  --text-base: 1rem;       /* 16 */
+  --text-lg:   1.125rem;   /* 18 */
+  --text-xl:   1.375rem;   /* 22 */
+  --text-2xl:  1.75rem;    /* 28 */
+  --text-3xl:  2.25rem;    /* 36 */
+  --text-4xl:  3rem;       /* 48 */
+  --text-5xl:  4rem;       /* 64 */
+  --text-6xl:  5.25rem;    /* 84 */
+
+  /* ---- Weights ---- */
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* ---- Line heights ---- */
+  --leading-none:    1;
+  --leading-tight:   1.08;
+  --leading-snug:    1.22;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.66;
+
+  /* ---- Letter spacing ---- */
+  --tracking-tighter: -0.04em;
+  --tracking-tight:   -0.02em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.04em;
+  --tracking-eyebrow: 0.16em;  /* uppercase mono eyebrows */
+}

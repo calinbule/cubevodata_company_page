@@ -1,0 +1,44 @@
+/* Cubevo — Elevation & motion tokens
+   ==================================================================
+   Shadows are cool-tinted and layered (key + ambient). On dark they
+   deepen and pick up a faint top-edge highlight. Motion is calm and
+   confident: short, eased, never bouncy on functional UI.
+   ================================================================== */
+
+:root,
+[data-theme="light"] {
+  --shadow-xs: 0 1px 2px rgba(20, 26, 38, 0.06);
+  --shadow-sm: 0 1px 3px rgba(20, 26, 38, 0.08), 0 1px 2px rgba(20, 26, 38, 0.04);
+  --shadow-md: 0 6px 16px -4px rgba(20, 26, 38, 0.10), 0 2px 6px -2px rgba(20, 26, 38, 0.06);
+  --shadow-lg: 0 14px 34px -10px rgba(20, 26, 38, 0.16), 0 4px 12px -4px rgba(20, 26, 38, 0.08);
+  --shadow-xl: 0 28px 60px -16px rgba(20, 26, 38, 0.20), 0 8px 20px -8px rgba(20, 26, 38, 0.10);
+  --shadow-brand: 0 10px 28px -8px rgba(32, 80, 216, 0.42);
+  --shadow-focus: 0 0 0 3px var(--focus-ring);
+}
+
+[data-theme="dark"] {
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.40);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.30);
+  --shadow-md: 0 8px 20px -6px rgba(0, 0, 0, 0.55), 0 2px 6px -2px rgba(0, 0, 0, 0.40);
+  --shadow-lg: 0 18px 40px -12px rgba(0, 0, 0, 0.62), 0 6px 14px -6px rgba(0, 0, 0, 0.45);
+  --shadow-xl: 0 32px 70px -18px rgba(0, 0, 0, 0.70), 0 10px 24px -10px rgba(0, 0, 0, 0.50);
+  --shadow-brand: 0 12px 32px -8px rgba(58, 94, 230, 0.50);
+  --shadow-focus: 0 0 0 3px var(--focus-ring);
+}
+
+:root {
+  /* ---- Easing ---- */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);   /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);   /* @kind other */
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.5, 1);  /* @kind other */
+
+  /* ---- Duration ---- */
+  --dur-fast: 120ms;  /* @kind other */
+  --dur-base: 200ms;  /* @kind other */
+  --dur-slow: 360ms;  /* @kind other */
+
+  /* ---- Blur ---- */
+  --blur-sm: 8px;
+  --blur-md: 16px;
+  --blur-lg: 28px;
+}
