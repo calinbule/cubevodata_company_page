@@ -26,6 +26,10 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-!ty6q$45(%=j86=5wdnqgidfnu
 
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',') if os.getenv('ALLOWED_HOSTS') else []
 
+# Django 4+ checks the request Origin against full origins (with scheme) for
+# unsafe methods (e.g. the admin login POST). Trust https for each allowed host.
+CSRF_TRUSTED_ORIGINS = [f'https://{host.strip()}' for host in ALLOWED_HOSTS if host.strip()]
+
 
 # Application definition
 
