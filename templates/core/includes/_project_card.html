@@ -1,12 +1,12 @@
-{% comment %} Project card. Params: cat icon tag en_title ro_title en_desc ro_desc {% endcomment %}
+{% comment %} Project card. Param: item (Project) {% endcomment %}
 <div class="cv-card cv-card--outline cv-card--pad-lg cv-card--interactive"
-    x-show="workFilter === 'all' || workFilter === '{{ cat }}'">
+    x-show="workFilter === 'all' || workFilter === '{{ item.category }}'">
     <div class="project">
         <div class="project__top">
-            <div class="project__ico">{% include "core/includes/icon.html" with name=icon size=20 %}</div>
-            <span class="cv-badge cv-badge--neutral cv-badge--md cv-badge--outline">{{ tag }}</span>
+            <div class="project__ico">{% include "core/includes/icon.html" with name=item.icon size=20 %}</div>
+            <span class="cv-badge cv-badge--neutral cv-badge--md cv-badge--outline">{{ item.tag }}</span>
         </div>
-        <h3><span x-show="language === 'en'">{{ en_title }}</span><span x-show="language === 'ro'">{{ ro_title }}</span></h3>
-        <p><span x-show="language === 'en'">{{ en_desc }}</span><span x-show="language === 'ro'">{{ ro_desc }}</span></p>
+        <h3><span x-show="language === 'en'">{{ item.title_en }}</span><span x-show="language === 'ro'">{{ item.title_ro }}</span></h3>
+        <p><span x-show="language === 'en'">{{ item.desc_en }}</span><span x-show="language === 'ro'">{{ item.desc_ro }}</span></p>
     </div>
 </div>

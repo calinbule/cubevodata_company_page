@@ -1,0 +1,42 @@
+<div class="icon-picker" data-icon-picker>
+  <input type="text" class="icon-picker__search" placeholder="Search icons…" aria-label="Search icons">
+  <div class="icon-picker__grid">
+    {% for group, options, index in widget.optgroups %}
+      {% for option in options %}
+        {% if option.value %}
+        <label class="icon-picker__tile" data-name="{{ option.value }}">
+          <input type="radio" name="{{ option.name }}" value="{{ option.value }}"{% if option.selected %} checked{% endif %}>
+          <span class="icon-picker__svg">{{ option.svg }}</span>
+          <span class="icon-picker__label">{{ option.label }}</span>
+        </label>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </div>
+</div>
+<style>
+  .icon-picker__search{display:block;width:100%;max-width:320px;margin-bottom:.5rem;padding:.45rem .6rem;border:1px solid var(--color-base-300,#d1d5db);border-radius:.5rem;background:transparent;color:inherit;font-size:.85rem;}
+  .icon-picker__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(86px,1fr));gap:.5rem;max-height:340px;overflow:auto;padding:.4rem;border:1px solid var(--color-base-200,#e5e7eb);border-radius:.6rem;}
+  .icon-picker__tile{position:relative;display:flex;flex-direction:column;align-items:center;gap:.35rem;padding:.6rem .3rem;border:1px solid var(--color-base-200,#e5e7eb);border-radius:.55rem;cursor:pointer;text-align:center;transition:background .12s,border-color .12s,box-shadow .12s;}
+  .icon-picker__tile:hover{background:var(--color-base-100,#f3f4f6);}
+  .icon-picker__tile input{position:absolute;opacity:0;width:0;height:0;}
+  .icon-picker__tile:has(input:checked){border-color:#6366f1;background:rgba(99,102,241,.12);box-shadow:0 0 0 1px #6366f1;}
+  .icon-picker__svg{color:inherit;line-height:0;}
+  .icon-picker__tile:has(input:checked) .icon-picker__svg{color:#6366f1;}
+  .icon-picker__label{font-size:11px;line-height:1.2;color:var(--color-base-500,#6b7280);word-break:break-word;}
+</style>
+<script>
+(function(){
+  document.querySelectorAll('[data-icon-picker]:not([data-init])').forEach(function(picker){
+    picker.setAttribute('data-init','1');
+    var search = picker.querySelector('.icon-picker__search');
+    var tiles = picker.querySelectorAll('.icon-picker__tile');
+    search.addEventListener('input', function(){
+      var q = this.value.trim().toLowerCase();
+      tiles.forEach(function(tile){
+        tile.style.display = tile.getAttribute('data-name').toLowerCase().indexOf(q) !== -1 ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>

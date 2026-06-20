@@ -30,6 +30,7 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',') if os.getenv('ALLOWED_
 # Application definition
 
 INSTALLED_APPS = [
+    'unfold',  # modern admin theme; must come before django.contrib.admin
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,6 +56,13 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware'
 ]
+
+# django-unfold admin theme branding
+UNFOLD = {
+    'SITE_TITLE': 'Cubevo Admin',
+    'SITE_HEADER': 'Cubevo',
+    'SITE_SUBHEADER': 'Site content',
+}
 
 ROOT_URLCONF = 'config.urls'
 

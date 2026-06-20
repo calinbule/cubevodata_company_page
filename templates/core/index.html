@@ -87,12 +87,7 @@ reply = Anthropic().messages.<span class="k">create</span>(
                 </p>
             </div>
             <div class="grid-3">
-                {% include "core/includes/_service_card.html" with icon="code" en_title="Custom Software" ro_title="Software Personalizat" en_desc="Bespoke solutions designed around your unique business challenges and goals." ro_desc="Soluții create în jurul provocărilor și obiectivelor unice ale afacerii tale." %}
-                {% include "core/includes/_service_card.html" with icon="globe" en_title="Web Development" ro_title="Dezvoltare Web" en_desc="Fast, accessible sites with WordPress, Jekyll or fully custom builds." ro_desc="Site-uri rapide și accesibile cu WordPress, Jekyll sau soluții custom." %}
-                {% include "core/includes/_service_card.html" with icon="shield" en_title="IT Consulting" ro_title="Consultanță IT" en_desc="Expert guidance on strategy, digital transformation and IT optimisation." ro_desc="Îndrumare pe strategie, transformare digitală și optimizare IT." %}
-                {% include "core/includes/_service_card.html" with icon="server" en_title="Infrastructure" ro_title="Infrastructură" en_desc="Design and run on-prem or cloud infrastructure, databases and networks." ro_desc="Proiectăm și întreținem infrastructură on-prem sau cloud, baze de date și rețele." %}
-                {% include "core/includes/_service_card.html" with icon="plug" en_title="Software Integration" ro_title="Integrare Software" en_desc="Deploy and connect open-source CRMs, ERPs and collaboration suites." ro_desc="Implementăm și conectăm CRM-uri, ERP-uri și suite de colaborare open-source." %}
-                {% include "core/includes/_service_card.html" with icon="wrench" en_title="Hosting & Maintenance" ro_title="Găzduire & Mentenanță" en_desc="Reliable hosting, monitoring and maintenance to keep you running smoothly." ro_desc="Găzduire fiabilă, monitorizare și mentenanță ca totul să meargă lin." %}
+                {% for item in services %}{% include "core/includes/_service_card.html" with item=item %}{% endfor %}
             </div>
         </div>
     </section>
@@ -112,30 +107,7 @@ reply = Anthropic().messages.<span class="k">create</span>(
                 </p>
             </div>
             <div class="grid-3">
-                <div class="cv-card cv-card--elevated cv-card--pad-lg cv-card--interactive">
-                    <div class="feature">
-                        <div class="feature__ico ai-ico">{% include "core/includes/icon.html" with name="bot" size=24 %}</div>
-                        <h3><span x-show="language === 'en'">Intelligent Chatbots</span><span x-show="language === 'ro'">Chatboți Inteligenți</span></h3>
-                        <p><span x-show="language === 'en'">Assistants that understand natural language and help customers 24/7.</span><span x-show="language === 'ro'">Asistenți care înțeleg limbajul natural și ajută clienții 24/7.</span></p>
-                        <span class="cv-badge cv-badge--accent cv-badge--md"><span class="cv-badge__dot"></span>RAG</span>
-                    </div>
-                </div>
-                <div class="cv-card cv-card--elevated cv-card--pad-lg cv-card--interactive">
-                    <div class="feature">
-                        <div class="feature__ico ai-ico">{% include "core/includes/icon.html" with name="mic" size=24 %}</div>
-                        <h3><span x-show="language === 'en'">Voice Assistants</span><span x-show="language === 'ro'">Asistenți Vocali</span></h3>
-                        <p><span x-show="language === 'en'">Conversational voice interfaces for natural, hands-free interaction.</span><span x-show="language === 'ro'">Interfețe vocale conversaționale pentru interacțiune naturală.</span></p>
-                        <span class="cv-badge cv-badge--accent cv-badge--md"><span class="cv-badge__dot"></span><span x-show="language === 'en'">Voice</span><span x-show="language === 'ro'">Voce</span></span>
-                    </div>
-                </div>
-                <div class="cv-card cv-card--elevated cv-card--pad-lg cv-card--interactive">
-                    <div class="feature">
-                        <div class="feature__ico ai-ico">{% include "core/includes/icon.html" with name="chart" size=24 %}</div>
-                        <h3><span x-show="language === 'en'">Predictive Analytics</span><span x-show="language === 'ro'">Analiză Predictivă</span></h3>
-                        <p><span x-show="language === 'en'">Uncover patterns and forecast trends to drive informed decisions.</span><span x-show="language === 'ro'">Descoperă tipare și anticipează tendințe pentru decizii informate.</span></p>
-                        <span class="cv-badge cv-badge--accent cv-badge--md"><span class="cv-badge__dot"></span>ML</span>
-                    </div>
-                </div>
+                {% for item in ai_services %}{% include "core/includes/_ai_card.html" with item=item %}{% endfor %}
             </div>
             {% comment %}
             <div style="margin-top: var(--space-10)">
@@ -168,12 +140,7 @@ reply = Anthropic().messages.<span class="k">create</span>(
                 </div>
             </div>
             <div class="work__grid">
-                {% include "core/includes/_project_card.html" with cat="web" icon="globe" tag="E-commerce" en_title="Custom E-commerce Suite" ro_title="Suită E-commerce" en_desc="Online platform with integrated payments for niche service providers." ro_desc="Platformă online cu procesare de plăți pentru furnizori de servicii nișate." %}
-                {% include "core/includes/_project_card.html" with cat="ai" icon="bot" tag="AI" en_title="Documentation Chatbot" ro_title="Chatbot Documentație" en_desc="AI assistant that helps users navigate complex documentation." ro_desc="Asistent AI care ajută utilizatorii să navigheze documentație complexă." %}
-                {% include "core/includes/_project_card.html" with cat="cloud" icon="cloud" tag="Cloud" en_title="Self-hosted Cloud Suite" ro_title="Suită Cloud Self-hosted" en_desc="Secure private cloud with file sharing and collaboration tools." ro_desc="Cloud privat securizat cu partajare de fișiere și colaborare." %}
-                {% include "core/includes/_project_card.html" with cat="software" icon="layers" tag="App" en_title="Contract Management App" ro_title="Gestionare Contracte" en_desc="Streamlined contract lifecycle with automated workflows and alerts." ro_desc="Ciclu de viață al contractelor cu fluxuri și alerte automate." %}
-                {% include "core/includes/_project_card.html" with cat="web" icon="globe" tag="WordPress" en_title="WordPress Websites" ro_title="Site-uri WordPress" en_desc="Custom WordPress builds with optimised performance and SEO." ro_desc="Build-uri WordPress custom cu performanță și SEO optimizate." %}
-                {% include "core/includes/_project_card.html" with cat="software" icon="zap" tag="NFC" en_title="NFC Business Cards" ro_title="Cărți de Vizită NFC" en_desc="Digital business cards with NFC for instant contact sharing." ro_desc="Cărți de vizită digitale cu NFC pentru partajare instant." %}
+                {% for item in projects %}{% include "core/includes/_project_card.html" with item=item %}{% endfor %}
             </div>
         </div>
     </section>

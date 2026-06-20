@@ -1,14 +1,8 @@
-{% comment %} Service feature card. Params: icon en_title ro_title en_desc ro_desc {% endcomment %}
+{% comment %} Service card. Param: item (Service) {% endcomment %}
 <div class="cv-card cv-card--outline cv-card--pad-lg cv-card--interactive">
     <div class="feature">
-        <div class="feature__ico">{% include "core/includes/icon.html" with name=icon size=24 %}</div>
-        <h3><span x-show="language === 'en'">{{ en_title }}</span><span x-show="language === 'ro'">{{ ro_title }}</span></h3>
-        <p><span x-show="language === 'en'">{{ en_desc }}</span><span x-show="language === 'ro'">{{ ro_desc }}</span></p>
-        {% comment %}
-        <span class="feature__link">
-            <span x-show="language === 'en'">Learn more</span><span x-show="language === 'ro'">Află mai mult</span>
-            {% include "core/includes/icon.html" with name="arrowRight" size=15 %}
-        </span>
-        {% endcomment %}
+        <div class="feature__ico">{% include "core/includes/icon.html" with name=item.icon size=24 %}</div>
+        <h3><span x-show="language === 'en'">{{ item.title_en }}</span><span x-show="language === 'ro'">{{ item.title_ro }}</span></h3>
+        <p><span x-show="language === 'en'">{{ item.desc_en }}</span><span x-show="language === 'ro'">{{ item.desc_ro }}</span></p>
     </div>
 </div>

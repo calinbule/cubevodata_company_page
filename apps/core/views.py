@@ -1,9 +1,17 @@
 from django.shortcuts import render
 from django.views.decorators.cache import cache_page
 
+from .models import AIService, Project, Service
+
+
 # @cache_page(60 * 60)  # Cache for 1 hour
 def index(request):
-    return render(request, 'core/index.html')
+    context = {
+        'services': Service.objects.filter(is_active=True),
+        'ai_services': AIService.objects.filter(is_active=True),
+        'projects': Project.objects.filter(is_active=True),
+    }
+    return render(request, 'core/index.html', context)
 
 
 def cookies(request):
